@@ -1,0 +1,2827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarajan Sanmilan — Centenary 1927–2027 | তৰাজান সন্মিলন</title>
+  <meta name="description" content="Tarajan Sanmilan — A century of community, culture, and heritage in Assam. Founded 1927. Celebrating 100 years in 2027.">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#7A1020">
+
+  <!-- Open Graph / social sharing.
+       NOTE: og:image and og:url must be ABSOLUTE URLs on the live site.
+       After deploying, replace the relative paths below with the full domain,
+       e.g. https://yourdomain.org/og-image.jpg -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tarajan Sanmilan">
+  <meta property="og:title" content="Tarajan Sanmilan — Centenary 1927–2027">
+  <meta property="og:description" content="A century of community, culture, and heritage in the heartland of Assam. Founded 1927 · Celebrating 100 years in 2027.">
+  <meta property="og:image" content="og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Tarajan Sanmilan centenary crest, 1927–2027">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tarajan Sanmilan — Centenary 1927–2027">
+  <meta name="twitter:description" content="A century of community, culture, and heritage in the heartland of Assam. Founded 1927 · Celebrating 100 years in 2027.">
+  <meta name="twitter:image" content="og-image.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --crimson:       #7A1020;
+      --crimson-mid:   #9B1628;
+      --crimson-light: #C41E3A;
+      --gold:          #B8923A;
+      --gold-light:    #D4AF6A;
+      --gold-pale:     #EDD89A;
+      --ivory:         #FAF6EE;
+      --ivory-dark:    #F0E6D0;
+      --cream:         #FDF9F2;
+      --dark:          #1A0606;
+      --dark-mid:      #3C1414;
+      --text:          #2A1010;
+      --text-muted:    #7A4A4A;
+      --border:        #D4B896;
+      --shadow-warm:   rgba(122, 16, 32, 0.12);
+
+      --ff-display: 'Cormorant Garamond', Georgia, serif;
+      --ff-body:    'EB Garamond', Georgia, serif;
+      --ff-assamese:'Noto Serif Bengali', serif;
+
+      --nav-h: 72px;
+      --section-pad: clamp(5rem, 10vw, 9rem);
+      --container: 1200px;
+    }
+
+    /* ─── RESET ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+    body {
+      font-family: var(--ff-body);
+      background: var(--ivory);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      overflow-y: visible;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; font-family: inherit; }
+    ::selection { background: var(--crimson); color: var(--ivory); }
+
+    /* ─── UTILITIES ───────────────────────────────────────── */
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 3rem); }
+    .section-pad { padding: var(--section-pad) 0; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+    /* ── REVEAL: expo-out easing, shorter distance, subtle scale ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px) scale(0.985);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-32px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(32px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-left.visible, .reveal-right.visible { opacity: 1; transform: none; }
+    /* Timeline dot: spring pop-in */
+    .reveal-dot {
+      opacity: 0;
+      transform: scale(0);
+      transition: opacity 0.3s ease,
+                  transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .reveal-dot.visible { opacity: 1; transform: scale(1); }
+    /* Gallery items: scale-in, no translate */
+    .gallery-item.reveal {
+      transform: scale(0.94);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .gallery-item.reveal.visible { transform: scale(1); }
+
+    /* ─── GAMOSA BORDER ───────────────────────────────────── */
+    .gamosa-strip {
+      height: 10px;
+      background:
+        repeating-linear-gradient(90deg,
+          var(--crimson)    0, var(--crimson)    6px,
+          var(--ivory)      6px, var(--ivory)    9px,
+          var(--gold)       9px, var(--gold)     12px,
+          var(--ivory)      12px, var(--ivory)   15px,
+          var(--crimson)    15px, var(--crimson)  21px,
+          var(--ivory)      21px, var(--ivory)   24px
+        );
+    }
+    .gamosa-strip-thin {
+      height: 5px;
+      background:
+        repeating-linear-gradient(90deg,
+          var(--crimson)  0, var(--crimson)  4px,
+          var(--gold)     4px, var(--gold)   6px,
+          var(--ivory)    6px, var(--ivory)  8px,
+          var(--crimson)  8px, var(--crimson) 12px
+        );
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────── */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: var(--nav-h);
+      display: flex; align-items: center;
+      padding: 0 clamp(1.25rem, 4vw, 3rem);
+      background: rgba(250, 246, 238, 0.85);
+      backdrop-filter: blur(14px) saturate(180%);
+      border-bottom: 1px solid rgba(212, 184, 150, 0.4);
+      transition: box-shadow 0.3s;
+    }
+    #nav.scrolled { box-shadow: 0 4px 24px var(--shadow-warm); }
+    .nav-inner {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      max-width: var(--container); margin: 0 auto;
+    }
+    .nav-brand { display: flex; flex-direction: column; gap: 1px; }
+    .nav-brand { gap: 0.6rem !important; flex-direction: row !important; align-items: center !important; }
+    .nav-logo {
+      height: 46px; width: auto; flex-shrink: 0;
+      border-radius: 9px;
+      border: 1px solid rgba(184,146,58,0.55);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.14);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .nav-brand:hover .nav-logo { box-shadow: 0 4px 14px rgba(122,16,32,0.22); }
+    .nav-brand:hover .nav-logo { transform: scale(1.07); }
+    .nav-brand-text { display: flex; flex-direction: column; gap: 1px; }
+    .nav-brand-en {
+      font-family: var(--ff-display);
+      font-size: 1.15rem; font-weight: 600;
+      color: var(--crimson); letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+    .nav-brand-as {
+      font-family: var(--ff-assamese);
+      font-size: 0.78rem; color: var(--gold);
+      letter-spacing: 0.02em; line-height: 1;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: clamp(1rem, 2.5vw, 2rem);
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--ff-body);
+      font-size: 0.88rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--dark-mid);
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
+      height: 1px; background: var(--crimson);
+      transform: scaleX(0); transition: transform 0.25s;
+    }
+    .nav-links a:hover { color: var(--crimson); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta {
+      padding: 0.5rem 1.25rem;
+      background: var(--crimson); color: var(--ivory) !important;
+      border-radius: 2px; font-size: 0.82rem !important;
+      letter-spacing: 0.1em !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--crimson-mid) !important; color: var(--ivory) !important; }
+    .nav-burger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; padding: 4px;
+    }
+    .nav-burger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--crimson); transition: 0.3s;
+    }
+
+    /* ─── HERO ────────────────────────────────────────────── */
+    #hero {
+      height: 100svh; min-height: 560px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      position: relative; overflow: hidden;
+      background: #0b0305;
+    }
+
+    /* ── LEFT CELL — crimson-dark with content */
+    .hero-left {
+      position: relative; z-index: 2;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: flex-start;
+      padding: calc(var(--nav-h) + 2rem) clamp(2rem,5vw,5rem) 3rem;
+      background:
+        radial-gradient(ellipse 120% 80% at 20% 55%, rgba(122,16,32,0.75) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 60% at 5% 90%, rgba(184,146,58,0.1) 0%, transparent 55%),
+        linear-gradient(170deg, #1c0607 0%, #2d0a0a 50%, #0e0303 100%);
+    }
+    .hero-left::after {
+      content:''; position:absolute; inset:0;
+      background-image: radial-gradient(circle at 1px 1px, rgba(212,184,150,0.07) 1px, transparent 0);
+      background-size: 32px 32px;
+      pointer-events:none;
+    }
+
+    /* ── RIGHT CELL — mandir with royal blue */
+    .hero-right {
+      position: relative; overflow: hidden;
+    }
+    .hero-mandir-img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 45%;
+      display: block;
+      filter: brightness(0.82) contrast(1.1) saturate(1.05);
+      transition: transform 10s ease;
+    }
+    #hero:hover .hero-mandir-img { transform: scale(1.04); }
+
+    /* Left-edge blend into crimson panel */
+    .hero-right::before {
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(to right, #150406 0%, rgba(15,4,6,0.55) 12%, transparent 35%),
+        linear-gradient(to bottom, rgba(5,10,30,0.45) 0%, transparent 25%, transparent 70%, rgba(5,10,30,0.65) 100%);
+    }
+    /* Dark-blue tint — subtle so building colours show */
+    .hero-right::after {
+      content: ''; position: absolute; inset: 0; z-index: 2;
+      background: rgba(8, 18, 52, 0.28);
+      mix-blend-mode: multiply;
+    }
+
+    /* Gold vertical divider */
+    .hero-divider {
+      position: absolute; left: 50%; top: 12%; bottom: 12%;
+      width: 1px; z-index: 10;
+      background: linear-gradient(to bottom, transparent, rgba(212,175,106,0.55) 25%, rgba(212,175,106,0.55) 75%, transparent);
+    }
+    .hero-divider::before, .hero-divider::after {
+      content: '◆'; position: absolute; left: 50%; transform: translateX(-50%);
+      font-size: 0.45rem; color: rgba(212,175,106,0.65); line-height: 1;
+    }
+    .hero-divider::before { top: -0.3rem; }
+    .hero-divider::after  { bottom: -0.3rem; }
+
+    /* Year stamp — large ghost text on mandir */
+    .hero-mandir-stamp {
+      position: absolute; bottom: clamp(2rem,6vh,4.5rem); right: clamp(2rem,4vw,4rem);
+      z-index: 5; text-align: right; line-height: 1;
+    }
+    .hero-mandir-stamp-year {
+      font-family: var(--ff-display);
+      font-size: clamp(4rem,8vw,7rem);
+      color: rgba(212,175,106,0.13);
+      letter-spacing: -0.02em; display: block;
+    }
+    .hero-mandir-stamp-label {
+      font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase;
+      color: rgba(212,175,106,0.4);
+    }
+
+    /* Blue glass badge — top right */
+    .hero-mandir-badge {
+      position: absolute; top: calc(var(--nav-h) + 1.5rem); right: clamp(1.5rem,3vw,3rem);
+      z-index: 5;
+      border: 1px solid rgba(120,175,255,0.3);
+      background: rgba(10,22,62,0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 0.65rem 1.2rem;
+      text-align: center;
+    }
+    .hero-mandir-badge span {
+      display: block;
+      font-family: var(--ff-assamese);
+      font-size: 1rem;
+      color: rgba(190,220,255,0.9);
+      letter-spacing: 0.04em; line-height: 1.3;
+    }
+    .hero-mandir-badge small {
+      font-size: 0.55rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: rgba(120,175,255,0.55); display: block; margin-top: 0.25rem;
+    }
+
+    /* Ghost seal bottom-left */
+    .hero-seal {
+      position: absolute; left: clamp(1rem,2.5vw,2rem); bottom: clamp(1.5rem,3vh,2.5rem);
+      width: clamp(52px,5vw,72px);
+      opacity: 0.12; z-index: 3;
+      border-radius: 12px;
+      filter: saturate(0.3) brightness(1.2);
+    }
+
+    /* Hero content — now lives inside .hero-left */
+    .hero-content {
+      position: relative; z-index: 3;
+      display: flex; flex-direction: column;
+      align-items: flex-start; text-align: left;
+      width: 100%;
+    }
+    .hero-content .hero-eyebrow { justify-content: flex-start; }
+    .hero-content .hero-desc { text-align: left; margin: 0 0 2.5rem; max-width: 460px; }
+    .hero-content .hero-actions { justify-content: flex-start; }
+
+    /* ── TABLET (769–1024px) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .hero-left {
+        padding: calc(var(--nav-h) + 1rem) 2.5rem 2rem;
+      }
+      .hero-mandir-badge { right: 1rem; }
+      .hero-mandir-stamp { right: 1rem; bottom: 2rem; }
+    }
+
+    /* ── MOBILE (≤768px) */
+    @media (max-width: 768px) {
+      #hero { grid-template-columns: 1fr; height: 100svh; min-height: 600px; position: relative; }
+      /* Mandir becomes a full-bleed backdrop behind the text */
+      .hero-right {
+        display: block;
+        position: absolute; inset: 0; z-index: 0;
+        width: 100%; height: 100%;
+      }
+      .hero-right .hero-mandir-badge,
+      .hero-right .hero-mandir-stamp { display: none; }   /* keep the mobile backdrop clean */
+      .hero-mandir-img { object-position: center 38%; }
+      /* Even vignette over the photo on mobile (override desktop's left-edge blend) */
+      .hero-right::before {
+        background:
+          linear-gradient(to bottom, rgba(10,3,4,0.55) 0%, transparent 28%, transparent 58%, rgba(10,3,4,0.55) 100%);
+      }
+      .hero-divider { display: none; }
+      .hero-seal { display: none; }
+      .hero-left {
+        position: relative; z-index: 2;
+        padding: calc(var(--nav-h) + 1rem) 1.5rem 5rem;
+        align-items: center; justify-content: center;
+        /* Crimson wash dense behind the text, clearing toward the bottom to reveal the mandir */
+        background:
+          radial-gradient(ellipse 120% 58% at 50% 36%, rgba(122,16,32,0.70) 0%, transparent 72%),
+          linear-gradient(180deg, rgba(14,3,3,0.86) 0%, rgba(22,6,7,0.62) 42%, rgba(14,3,3,0.22) 76%, rgba(14,3,3,0.50) 100%);
+      }
+      .hero-content { align-items: center; text-align: center; }
+      .hero-content .hero-eyebrow { justify-content: center; }
+      .hero-content .hero-title { text-align: center; }
+      .hero-content .hero-title-as { text-align: center; }
+      .hero-content .hero-desc { text-align: center; margin: 0 auto 2rem; }
+      .hero-content .hero-actions { justify-content: center; flex-direction: column; gap: 0.75rem; width: 100%; max-width: 320px; }
+      .hero-content .hero-actions a { text-align: center; width: 100%; }
+      /* Logo crest smaller on mobile */
+      .hero-content > img:first-child { width: clamp(60px,18vw,80px) !important; margin-bottom: 1rem !important; }
+      /* Hide scroll indicator on mobile — overlaps CTAs */
+      .hero-scroll { display: none !important; }
+      /* Remove bottom padding since scroll indicator is hidden */
+      .hero-left { padding-bottom: 2.5rem; }
+    }
+    .hero-eyebrow {
+      font-family: var(--ff-body);
+      font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+      font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 1rem; justify-content: center;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--gold);
+    }
+    .hero-title {
+      font-family: var(--ff-display);
+      font-size: clamp(3rem, 9vw, 7rem);
+      font-weight: 600; line-height: 1.0;
+      color: var(--ivory);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+    }
+    .hero-title-as {
+      font-family: var(--ff-assamese);
+      font-size: clamp(1.2rem, 3.5vw, 2.2rem);
+      color: var(--gold-pale); font-weight: 400;
+      margin-bottom: 2rem; letter-spacing: 0.02em;
+    }
+    .hero-year-badge {
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      border: 1px solid rgba(212,184,150,0.4);
+      padding: 0.6rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .hero-year-badge span {
+      font-family: var(--ff-display);
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--gold-light);
+      letter-spacing: 0.1em;
+    }
+    .hero-year-badge .dot { color: var(--crimson-light); font-size: 1.4rem; }
+    .hero-desc {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: rgba(250,246,238,0.72);
+      max-width: 560px; margin: 0 auto 3rem;
+      line-height: 1.8;
+    }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      position: relative; overflow: hidden;
+      padding: 0.85rem 2.25rem;
+      background: var(--crimson);
+      color: var(--ivory);
+      font-family: var(--ff-body);
+      font-size: 0.85rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      border: 1px solid var(--crimson);
+      transition: background 0.3s, border-color 0.3s, letter-spacing 0.3s;
+    }
+    /* Gold shimmer sweep on hover */
+    .btn-primary::after {
+      content: '';
+      position: absolute; top: 0; left: -80%;
+      width: 60%; height: 100%;
+      background: linear-gradient(105deg, transparent, rgba(212,175,106,0.28), transparent);
+      transform: skewX(-15deg);
+      transition: left 0s;
+      pointer-events: none;
+    }
+    .btn-primary:hover { background: var(--crimson-mid); border-color: var(--crimson-mid); letter-spacing: 0.16em; }
+    .btn-primary:hover::after { left: 160%; transition: left 0.55s ease; }
+
+    .btn-outline {
+      padding: 0.85rem 2.25rem;
+      color: var(--gold-light);
+      font-family: var(--ff-body);
+      font-size: 0.85rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      border: 1px solid rgba(212,175,106,0.5);
+      /* Gold fill sweeps in from the left using background-position */
+      background-image: linear-gradient(to right, var(--gold) 50%, transparent 50%);
+      background-size: 202% 100%;
+      background-position: right center;
+      transition: background-position 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+                  color 0.3s, letter-spacing 0.3s, border-color 0.3s;
+    }
+    .btn-outline:hover {
+      background-position: left center;
+      border-color: var(--gold);
+      color: var(--dark);
+      letter-spacing: 0.16em;
+    }
+    .hero-scroll {
+      position: absolute; bottom: 2rem; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      color: rgba(250,246,238,0.4);
+      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+      z-index: 2;
+    }
+    .hero-scroll-line {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, rgba(212,184,150,0.5), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.2); }
+    }
+    .hero-seal {
+      position: absolute; right: clamp(1rem, 5vw, 4rem); top: 50%;
+      transform: translateY(-50%);
+      width: clamp(120px, 16vw, 200px);
+      opacity: 0.18;
+      pointer-events: none;
+      border-radius: 14px;
+      filter: brightness(1.1) saturate(0.6) sepia(0.3);
+    }
+    @media (max-width: 768px) { .hero-seal { display: none; } }
+
+    /* ─── STATS BAR ────────────────────────────────────────── */
+    #stats {
+      background: var(--crimson);
+    }
+    .stats-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      divide-x: 1px solid rgba(255,255,255,0.15);
+    }
+    .stat-item {
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.15);
+      position: relative;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+      display: inline-block;
+      /* Rich ivory-to-gold gradient numerals */
+      background: linear-gradient(180deg, #FFFDF8 0%, #FAF6EE 45%, #E6C87E 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+      will-change: transform;
+    }
+    .stat-num sup {
+      font-size: 0.45em; vertical-align: super;
+      -webkit-text-fill-color: var(--gold-light); color: var(--gold-light);
+    }
+    /* Spring "pop" + glow the moment a number finishes counting */
+    .stat-num.counted { animation: statPop 0.75s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    @keyframes statPop {
+      0%   { transform: scale(1);    filter: drop-shadow(0 0 0 rgba(212,175,106,0)); }
+      45%  { transform: scale(1.13); filter: drop-shadow(0 0 16px rgba(212,175,106,0.6)); }
+      100% { transform: scale(1);    filter: drop-shadow(0 0 0 rgba(212,175,106,0)); }
+    }
+    .stat-label {
+      font-size: 0.75rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: rgba(250,246,238,0.65);
+    }
+    /* Gold accent line that draws in under each stat when revealed */
+    .stat-accent {
+      display: block; height: 2px; width: 0; margin: 0.75rem auto 0;
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+      transition: width 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+    }
+    .stat-item.visible .stat-accent { width: 50px; }
+    @media (prefers-reduced-motion: reduce) {
+      .stat-num.counted { animation: none !important; }
+      .stat-accent { transition: none !important; }
+    }
+
+    /* ─── ABOUT ────────────────────────────────────────────── */
+    #about { background: var(--cream); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+    }
+    .about-image-frame {
+      position: relative;
+    }
+    .about-photo {
+      width: 100%; aspect-ratio: 4/5;
+      background: linear-gradient(135deg, #2D0A0A 0%, #5A1A1A 40%, #8B3333 70%, #C87860 100%);
+      position: relative; overflow: hidden;
+    }
+    .about-photo::after {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='20' fill='none' stroke='rgba(212,175,106,0.15)' stroke-width='0.5'/%3E%3Ccircle cx='30' cy='30' r='12' fill='none' stroke='rgba(212,175,106,0.1)' stroke-width='0.5'/%3E%3C/svg%3E")
+        center/60px 60px;
+    }
+    .about-photo-label {
+      position: absolute; bottom: 1.5rem; left: 1.5rem;
+      font-family: var(--ff-display); font-style: italic;
+      font-size: 0.9rem; color: rgba(250,246,238,0.7);
+    }
+    .about-frame-deco {
+      position: absolute; top: -12px; left: -12px; right: 12px; bottom: -12px;
+      border: 1px solid var(--gold); z-index: -1; pointer-events: none;
+    }
+    /* প্ৰতীক গীত — anthem plaque (replaces the photo slot) */
+    .anthem-panel {
+      width: 100%;
+      position: relative; overflow: hidden;
+      background: linear-gradient(160deg, #FDFAF3 0%, #F4EAD4 100%);
+      box-shadow: 0 18px 48px rgba(122,16,32,0.14);
+    }
+    .anthem-panel svg { display: block; width: 100%; height: auto; }
+    .section-eyebrow {
+      font-size: 0.75rem; letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold); font-weight: 500;
+      margin-bottom: 0.75rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .section-eyebrow::before {
+      content: ''; width: 28px; height: 1px; background: var(--gold);
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 600; line-height: 1.15;
+      color: var(--dark); margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+    .section-title em { color: var(--crimson); font-style: italic; }
+    .about-text p {
+      font-size: clamp(1rem, 1.5vw, 1.1rem);
+      color: var(--text-muted); line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+    .about-text p:first-of-type::first-letter {
+      font-family: var(--ff-display);
+      font-size: 4em; font-weight: 600;
+      color: var(--crimson);
+      float: left; line-height: 0.75;
+      margin: 0.1em 0.1em 0 0;
+    }
+    .about-quote {
+      margin: 2rem 0;
+      padding: 1.25rem 1.5rem 1.25rem 2rem;
+      border-left: 3px solid var(--crimson);
+      background: var(--ivory-dark);
+    }
+    .about-quote p {
+      font-family: var(--ff-display);
+      font-size: 1.2rem; font-style: italic;
+      color: var(--dark-mid) !important;
+      margin: 0 !important;
+    }
+    .about-quote cite {
+      display: block; margin-top: 0.5rem;
+      font-size: 0.8rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold) !important;
+    }
+
+    /* ─── TIMELINE ─────────────────────────────────────────── */
+    #timeline { background: var(--dark); overflow: hidden; }
+    #timeline .section-title { color: var(--ivory); }
+    #timeline .section-eyebrow { color: var(--gold-light); }
+    #timeline .section-eyebrow::before { background: var(--gold-light); }
+    .timeline-header { text-align: center; margin-bottom: 4rem; }
+    .timeline-header p {
+      color: rgba(250,246,238,0.6);
+      max-width: 480px; margin: 0 auto;
+      font-size: 1.05rem; line-height: 1.8;
+    }
+    .timeline-track {
+      position: relative;
+      max-width: 880px; margin: 0 auto;
+    }
+    .timeline-line {
+      position: absolute; top: 0; bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      background: linear-gradient(to bottom,
+        transparent,
+        rgba(184,146,58,0.4) 10%,
+        rgba(184,146,58,0.4) 90%,
+        transparent);
+      clip-path: inset(0 0 100% 0);
+      transition: clip-path 2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .timeline-line.drawn { clip-path: inset(0 0 0% 0); }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      gap: 0;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+    .timeline-item:nth-child(even) .tl-content { grid-column: 3; grid-row: 1; text-align: left; }
+    .timeline-item:nth-child(even) .tl-empty   { grid-column: 1; grid-row: 1; }
+    .tl-content {
+      position: relative;
+      padding: 1.5rem 2rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(184,146,58,0.2);
+      transition: background 0.35s ease, border-color 0.35s ease,
+                  box-shadow 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    /* Gold accent bar that draws in from top on hover */
+    .tl-content::before {
+      content: '';
+      position: absolute; top: 0; left: -1px;
+      width: 2px; height: 0%;
+      background: var(--gold);
+      transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .tl-content:hover {
+      background: rgba(122,16,32,0.18);
+      border-color: rgba(184,146,58,0.45);
+      box-shadow: 0 4px 24px rgba(122,16,32,0.25);
+      transform: translateX(-3px);
+    }
+    .tl-content:hover::before { height: 100%; }
+    /* Even items (content on right) — accent bar on right, translate other way */
+    .timeline-item:nth-child(even) .tl-content::before { left: auto; right: -1px; }
+    .timeline-item:nth-child(even) .tl-content:hover { transform: translateX(3px); }
+    .tl-year {
+      font-family: var(--ff-display);
+      font-size: 2rem; font-weight: 700;
+      color: var(--crimson-light);
+      line-height: 1; margin-bottom: 0.25rem;
+    }
+    .tl-event {
+      font-family: var(--ff-display);
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--ivory); margin-bottom: 0.5rem;
+    }
+    .tl-desc {
+      font-size: 0.9rem; color: rgba(250,246,238,0.55);
+      line-height: 1.7;
+    }
+    .tl-dot {
+      grid-column: 2; grid-row: 1;
+      display: flex; align-items: flex-start;
+      justify-content: center;
+      padding-top: 1.75rem;
+      position: relative; z-index: 1;
+    }
+    .tl-dot-inner {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--dark);
+      box-shadow: 0 0 0 4px rgba(184,146,58,0.3);
+      transition: box-shadow 0.3s, background 0.3s;
+    }
+    .timeline-item:hover .tl-dot-inner {
+      background: var(--crimson-light);
+      box-shadow: 0 0 0 6px rgba(122,16,32,0.4);
+    }
+    .tl-empty { display: block; }
+
+    /* ─── HISTORY SUB-SECTIONS (dark bg) ───────────────────── */
+    .history-sub { margin-top: clamp(4rem, 8vw, 6.5rem); }
+    .history-sub-head { text-align: center; margin-bottom: 2.75rem; }
+    .history-sub-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 600; color: var(--ivory); line-height: 1.15;
+    }
+    .history-sub-title em { font-style: italic; color: var(--gold-light); }
+    /* Traditions cards */
+    .tradition-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .tradition-card {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(184,146,58,0.2);
+      border-left: 2px solid var(--gold);
+      padding: 1.6rem 1.75rem;
+      transition: background 0.35s ease, transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease, border-color 0.35s;
+    }
+    .tradition-card:hover {
+      background: rgba(122,16,32,0.18);
+      border-color: rgba(184,146,58,0.5);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+    }
+    .tradition-card h4 {
+      font-family: var(--ff-display); font-weight: 600;
+      font-size: 1.25rem; color: var(--gold-light);
+      margin-bottom: 0.6rem; line-height: 1.25;
+    }
+    .tradition-card p {
+      font-size: 0.9rem; line-height: 1.8;
+      color: rgba(250,246,238,0.62);
+    }
+    body.lang-as .tradition-card p { line-height: 1.95; }
+    /* Leadership honour roll */
+    .honor-cols {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(1.5rem, 4vw, 3.5rem);
+      max-width: 900px; margin: 0 auto;
+    }
+    .honor-col {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(184,146,58,0.22);
+      padding: 1.75rem clamp(1.25rem, 3vw, 2rem);
+    }
+    .honor-col-title {
+      font-family: var(--ff-display); font-weight: 600;
+      font-size: 1.3rem; color: var(--gold-light);
+      text-align: center; padding-bottom: 0.85rem; margin-bottom: 1.1rem;
+      border-bottom: 1px solid rgba(184,146,58,0.3);
+    }
+    .honor-col-title span {
+      font-family: var(--ff-assamese); font-size: 0.95rem;
+      color: var(--gold); font-weight: 400; margin-left: 0.35rem;
+    }
+    .honor-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+    .honor-list li {
+      display: flex; flex-direction: column; gap: 0.1rem;
+      padding-left: 1rem; position: relative;
+    }
+    .honor-list li::before {
+      content: '◆'; position: absolute; left: 0; top: 0.15rem;
+      font-size: 0.5rem; color: var(--gold);
+    }
+    .hn-en { font-size: 0.95rem; color: var(--ivory); font-weight: 500; line-height: 1.35; }
+    .hn-en em { font-style: italic; font-weight: 400; color: rgba(250,246,238,0.55); font-size: 0.85rem; }
+    .hn-as { font-family: var(--ff-assamese); font-size: 0.82rem; color: rgba(212,175,106,0.75); line-height: 1.4; }
+    @media (max-width: 620px) {
+      .honor-cols { grid-template-columns: 1fr; }
+    }
+
+    /* ─── GALLERY ──────────────────────────────────────────── */
+    #gallery { background: var(--cream); }
+    .gallery-header { text-align: center; margin-bottom: 3rem; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+      gap: 12px;
+    }
+    .gallery-item {
+      position: relative; overflow: hidden;
+      background: var(--ivory-dark);
+      cursor: pointer;
+    }
+    .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+    .gallery-item:nth-child(5) { grid-column: span 2; }
+    .gallery-item:nth-child(8) { grid-column: span 2; }
+    .gallery-photo {
+      width: 100%; height: 100%; min-height: 200px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .gallery-item:hover .gallery-photo { transform: scale(1.06); }
+    .gallery-placeholder {
+      width: 100%; padding-bottom: 75%;
+      position: relative;
+    }
+    .gallery-placeholder-inner {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 0.5rem;
+      transition: transform 0.6s ease;
+    }
+    .gallery-item:hover .gallery-placeholder-inner { transform: scale(1.06); }
+    .gallery-ph-icon { opacity: 0.35; }
+    .gallery-ph-label {
+      font-family: var(--ff-display); font-style: italic;
+      font-size: 0.85rem; opacity: 0.4; color: var(--dark);
+    }
+    .gallery-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,6,6,0.75) 0%, transparent 50%);
+      opacity: 0; transition: opacity 0.35s;
+      display: flex; align-items: flex-end; padding: 1.25rem;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+    .gallery-overlay-text {
+      font-family: var(--ff-display); font-style: italic;
+      font-size: 0.95rem; color: var(--ivory);
+    }
+    /* Color-coded gallery placeholders */
+    .gp-1 { background: linear-gradient(135deg, #3D0E0E, #7A2A2A); }
+    .gp-2 { background: linear-gradient(135deg, #1A2A1A, #2A4A2A); }
+    .gp-3 { background: linear-gradient(135deg, #1A1A2D, #2A2A5A); }
+    .gp-4 { background: linear-gradient(135deg, #2D1A08, #5A3A18); }
+    .gp-5 { background: linear-gradient(135deg, #0E1A2A, #1A3A5A); }
+    .gp-6 { background: linear-gradient(135deg, #2A1A08, #7A4A18); }
+    .gp-7 { background: linear-gradient(135deg, #1A0A1A, #4A1A4A); }
+    .gp-8 { background: linear-gradient(135deg, #0A1A0A, #1A4A1A); }
+
+    /* ─── LEADERSHIP ───────────────────────────────────────── */
+    #leadership { background: var(--ivory); }
+    .leadership-header { text-align: center; margin-bottom: 3.5rem; }
+    /* ── Heritage Vault: souvenir-magazine archive ── */
+    .vault-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+      gap: 3rem 2.5rem;
+      justify-content: center;
+    }
+    .vault-card { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .vault-cover {
+      position: relative; overflow: hidden;
+      padding: 10px; background: var(--cream);
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 40px var(--shadow-warm);
+      transition: transform 0.45s cubic-bezier(0.16,1,0.3,1), box-shadow 0.45s ease;
+    }
+    .vault-cover::after {
+      content: ''; position: absolute; inset: 4px; z-index: 2;
+      border: 1px solid rgba(184,146,58,0.35); pointer-events: none;
+    }
+    /* gold shine sweep on hover */
+    .vault-cover::before {
+      content: ''; position: absolute; top: 0; left: -120%; z-index: 3;
+      width: 70%; height: 100%;
+      background: linear-gradient(105deg, transparent, rgba(255,245,220,0.45), transparent);
+      transform: skewX(-18deg); pointer-events: none;
+      transition: left 0s;
+    }
+    .vault-card:hover .vault-cover {
+      transform: translateY(-8px);
+      box-shadow: 0 26px 60px rgba(122,16,32,0.24);
+    }
+    .vault-card:hover .vault-cover::before { left: 130%; transition: left 0.7s ease; }
+    .vault-cover img {
+      display: block; width: 100%; height: auto;
+      transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
+    }
+    .vault-card:hover .vault-cover img { transform: scale(1.06); }
+    .vault-meta { margin-top: 1.4rem; }
+    .vault-tag {
+      font-size: 0.66rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.55rem;
+    }
+    .vault-name {
+      font-family: var(--ff-assamese);
+      font-size: 1.65rem; font-weight: 600; color: var(--crimson);
+      line-height: 1.1; margin-bottom: 0.35rem;
+    }
+    .vault-name span {
+      display: block;
+      font-family: var(--ff-display); font-style: italic; font-weight: 400;
+      font-size: 0.95rem; color: var(--text-muted);
+      letter-spacing: 0.04em; margin-top: 0.2rem;
+    }
+    .vault-year {
+      font-family: var(--ff-display); font-size: 1.2rem; font-weight: 700;
+      color: var(--dark); margin-bottom: 0.25rem;
+    }
+    .vault-occasion { font-size: 0.82rem; color: var(--text-muted); }
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+    .member-card {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border: 1px solid var(--border);
+      background: var(--cream);
+      position: relative;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+    .member-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--crimson), var(--gold));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.35s;
+    }
+    .member-card:hover { border-color: var(--crimson); box-shadow: 0 8px 32px var(--shadow-warm); transform: translateY(-4px); }
+    .member-card:hover::before { transform: scaleX(1); }
+    .member-avatar {
+      width: 88px; height: 88px;
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--ff-display);
+      font-size: 2rem; font-weight: 600;
+      color: var(--ivory);
+      transition: border-color 0.3s;
+    }
+    .member-card:hover .member-avatar { border-color: var(--crimson); }
+    .member-name {
+      font-family: var(--ff-display);
+      font-size: 1.15rem; font-weight: 600;
+      color: var(--dark); margin-bottom: 0.2rem;
+    }
+    .member-role {
+      font-size: 0.75rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--crimson);
+      margin-bottom: 0.75rem;
+    }
+    .member-since {
+      font-size: 0.82rem; color: var(--text-muted);
+      font-style: italic;
+    }
+    .av-1 { background: linear-gradient(135deg, #7A1020, #C41E3A); }
+    .av-2 { background: linear-gradient(135deg, #1A3A1A, #3A6A3A); }
+    .av-3 { background: linear-gradient(135deg, #1A1A3A, #3A3A7A); }
+    .av-4 { background: linear-gradient(135deg, #3A1A08, #7A4A18); }
+    .av-5 { background: linear-gradient(135deg, #3A1A3A, #7A3A7A); }
+    .av-6 { background: linear-gradient(135deg, #0A2A2A, #1A5A5A); }
+
+    /* ─── EVENTS ───────────────────────────────────────────── */
+    #events { background: var(--dark); }
+    #events .section-title { color: var(--ivory); }
+    #events .section-eyebrow { color: var(--gold-light); }
+    #events .section-eyebrow::before { background: var(--gold-light); }
+    .events-header { margin-bottom: 3rem; }
+    .events-list { display: flex; flex-direction: column; gap: 1px; }
+    .event-item {
+      display: grid;
+      grid-template-columns: 100px 1fr auto;
+      gap: 2rem; align-items: center;
+      padding: 1.75rem 2rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(184,146,58,0.15);
+      transition: background 0.3s, border-color 0.3s;
+      cursor: pointer;
+    }
+    .event-item:hover {
+      background: rgba(122,16,32,0.2);
+      border-color: rgba(184,146,58,0.4);
+    }
+    .event-date { text-align: center; }
+    .event-date-day {
+      font-family: var(--ff-display);
+      font-size: 2.5rem; font-weight: 700;
+      color: var(--crimson-light); line-height: 1;
+    }
+    .event-date-month {
+      font-size: 0.7rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .event-date-year {
+      font-size: 0.75rem; color: rgba(250,246,238,0.4);
+    }
+    .event-info { border-left: 1px solid rgba(184,146,58,0.2); padding-left: 2rem; }
+    .event-tag {
+      font-size: 0.68rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+    .event-name {
+      font-family: var(--ff-display);
+      font-size: 1.25rem; font-weight: 600;
+      color: var(--ivory); margin-bottom: 0.3rem;
+    }
+    .event-details { font-size: 0.85rem; color: rgba(250,246,238,0.5); }
+    .event-cta {
+      padding: 0.6rem 1.5rem;
+      border: 1px solid rgba(184,146,58,0.35);
+      color: var(--gold-light);
+      font-size: 0.78rem; letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      transition: background 0.25s, color 0.25s;
+    }
+    .event-cta:hover { background: var(--crimson); color: var(--ivory); border-color: var(--crimson); }
+
+    /* ── Centenary programme (day-wise agenda) ── */
+    .prog-days { display: grid; grid-template-columns: 1.45fr 1fr; gap: 1.5rem; align-items: start; }
+    .prog-day {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(184,146,58,0.18);
+      padding: 1.75rem clamp(1.25rem,2.5vw,2rem);
+    }
+    .prog-day-head { padding-bottom: 1rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(184,146,58,0.22); }
+    .prog-date { font-family: var(--ff-display); font-size: 1.7rem; font-weight: 700; color: var(--ivory); line-height: 1; }
+    .prog-tag { display: inline-block; margin-top: 0.5rem; font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); }
+    .prog-list { display: flex; flex-direction: column; gap: 0.15rem; }
+    .prog-row {
+      display: grid; grid-template-columns: 132px 1fr; gap: 1rem;
+      padding: 0.8rem 0.5rem 0.8rem 0.9rem;
+      border-left: 2px solid transparent;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+    .prog-row:hover { background: rgba(122,16,32,0.16); border-left-color: var(--gold); }
+    .prog-time { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.02em; color: var(--gold-light); white-space: nowrap; }
+    .prog-text { font-size: 0.92rem; color: rgba(250,246,238,0.72); line-height: 1.5; }
+    body.lang-as .prog-time, body.lang-as .prog-text { line-height: 1.65; }
+    .prog-yearlong { margin-top: 3.25rem; }
+    .prog-yearlong-head { text-align: center; margin-bottom: 1.75rem; }
+    .prog-yearlong-title { font-family: var(--ff-display); font-size: clamp(1.4rem,3vw,1.9rem); font-weight: 600; color: var(--ivory); }
+    .prog-chips { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; max-width: 880px; margin: 0 auto; }
+    .prog-chip {
+      padding: 0.62rem 1.2rem;
+      border: 1px solid rgba(184,146,58,0.3);
+      border-radius: 999px;
+      font-size: 0.82rem; color: rgba(250,246,238,0.78);
+      transition: background 0.25s, border-color 0.25s, color 0.25s, transform 0.25s;
+    }
+    .prog-chip:hover { background: rgba(184,146,58,0.12); border-color: var(--gold); color: var(--ivory); transform: translateY(-2px); }
+    @media (max-width: 720px) {
+      .prog-days { grid-template-columns: 1fr; }
+      .prog-row { grid-template-columns: 108px 1fr; gap: 0.7rem; }
+    }
+
+    /* ─── DONATE ───────────────────────────────────────────── */
+    #donate {
+      background: var(--ivory-dark);
+      position: relative; overflow: hidden;
+    }
+    .donate-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 50%, rgba(122,16,32,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .donate-inner {
+      position: relative; z-index: 1;
+      max-width: 680px; margin: 0 auto;
+      text-align: center;
+    }
+    .donate-ornament {
+      width: 48px; height: 1px;
+      background: var(--gold);
+      margin: 0 auto 0.5rem;
+    }
+    .donate-ornament-2 {
+      display: flex; align-items: center; gap: 0.75rem;
+      justify-content: center; margin-bottom: 1.5rem;
+    }
+    .donate-ornament-2 span { font-size: 1.2rem; color: var(--crimson); }
+    .donate-ornament-2::before, .donate-ornament-2::after {
+      content: ''; flex: 1; max-width: 40px; height: 1px; background: var(--gold);
+    }
+    #donate .section-title { color: var(--dark); }
+    .donate-desc {
+      font-size: 1.05rem; line-height: 1.85;
+      color: var(--text-muted); margin-bottom: 2.5rem;
+    }
+    .donate-tiers {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1rem; margin-bottom: 2.5rem;
+    }
+    .donate-tier {
+      padding: 1.5rem 1rem;
+      border: 1px solid var(--border);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s;
+      background: var(--cream);
+    }
+    .donate-tier:hover, .donate-tier.active {
+      border-color: var(--crimson);
+      background: var(--crimson);
+    }
+    .donate-tier:hover .tier-amount,
+    .donate-tier.active .tier-amount { color: var(--ivory); }
+    .donate-tier:hover .tier-label,
+    .donate-tier.active .tier-label { color: rgba(250,246,238,0.75); }
+    .tier-amount {
+      font-family: var(--ff-display);
+      font-size: 1.5rem; font-weight: 700;
+      color: var(--crimson); line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+    .tier-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
+    .donate-btn {
+      display: inline-block;
+      padding: 1rem 3rem;
+      background: var(--crimson);
+      color: var(--ivory);
+      font-family: var(--ff-body);
+      font-size: 0.88rem; font-weight: 500;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      border: none;
+      transition: background 0.25s;
+      margin-bottom: 1.25rem;
+    }
+    .donate-btn:hover { background: var(--crimson-mid); }
+    .donate-note {
+      font-size: 0.8rem; color: var(--text-muted);
+      font-style: italic;
+    }
+    /* ── Direct payment: UPI QR + bank details ── */
+    .donate-pay { margin-top: 3.5rem; }
+    .pay-heading {
+      font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); font-weight: 500;
+      display: flex; align-items: center; justify-content: center; gap: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    .pay-heading::before, .pay-heading::after {
+      content: ''; height: 1px; width: 42px; background: var(--border);
+    }
+    .donate-pay-grid {
+      display: grid; grid-template-columns: 1fr 1.25fr; gap: 1.25rem;
+      text-align: left;
+    }
+    .pay-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      padding: 1.75rem 1.5rem;
+    }
+    .pay-upi { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .pay-qr {
+      width: 188px; height: 188px;
+      background: #fff; padding: 10px;
+      border: 1px solid var(--border);
+      box-shadow: 0 6px 20px var(--shadow-warm);
+    }
+    .pay-qr img { width: 100%; height: 100%; display: block; }
+    .pay-qr-caption { font-size: 0.85rem; color: var(--text-muted); margin: 1.1rem 0 0.4rem; line-height: 1.5; }
+    .pay-upi-id {
+      font-family: var(--ff-body); font-weight: 600;
+      font-size: 1.1rem; color: var(--crimson);
+      letter-spacing: 0.03em; user-select: all;
+    }
+    .pay-bank-title {
+      font-family: var(--ff-display); font-size: 1.3rem; font-weight: 600;
+      color: var(--crimson); margin-bottom: 1.1rem;
+      padding-bottom: 0.65rem; border-bottom: 1px solid var(--border);
+    }
+    .bank-list { display: flex; flex-direction: column; gap: 0.75rem; margin: 0; }
+    .bank-row { display: grid; grid-template-columns: 135px 1fr; gap: 0.5rem; align-items: baseline; }
+    .bank-label {
+      font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-muted); margin: 0;
+    }
+    .bank-value {
+      font-size: 0.94rem; color: var(--dark); font-weight: 500;
+      margin: 0; word-break: break-word; user-select: all;
+    }
+
+    /* ─── CONTACT ──────────────────────────────────────────── */
+    #contact { background: var(--cream); }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 5rem);
+      align-items: start;
+    }
+    #contact .section-eyebrow::before { background: var(--gold); }
+    .contact-info { display: flex; flex-direction: column; gap: 1.75rem; }
+    .contact-detail { display: flex; gap: 1rem; align-items: flex-start; }
+    .contact-icon {
+      width: 40px; height: 40px;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border);
+      color: var(--crimson);
+    }
+    .contact-detail h4 {
+      font-size: 0.72rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.2rem;
+    }
+    .contact-detail p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label {
+      font-size: 0.72rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--text-muted);
+    }
+    .form-group input, .form-group textarea, .form-group select {
+      padding: 0.75rem 1rem;
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--ff-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      border-color: var(--crimson);
+    }
+    .form-group textarea { min-height: 120px; }
+    .form-submit {
+      padding: 0.85rem 2.5rem;
+      background: var(--crimson); color: var(--ivory);
+      font-family: var(--ff-body);
+      font-size: 0.85rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      border: none;
+      align-self: flex-start;
+      transition: background 0.25s;
+    }
+    .form-submit:hover { background: var(--crimson-mid); }
+
+    /* ─── FOOTER ───────────────────────────────────────────── */
+    footer { background: var(--dark); }
+    .footer-main {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      padding: var(--section-pad) 0 4rem;
+    }
+    .footer-brand h2 {
+      font-family: var(--ff-display);
+      font-size: 1.6rem; font-weight: 600;
+      color: var(--ivory); margin-bottom: 0.25rem;
+    }
+    .footer-brand-as {
+      font-family: var(--ff-assamese);
+      font-size: 1rem; color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    .footer-brand p {
+      font-size: 0.88rem; color: rgba(250,246,238,0.45);
+      line-height: 1.8; max-width: 280px;
+    }
+    .footer-social { margin-top: 1.25rem; }
+    .social-link {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(184,146,58,0.35);
+      border-radius: 999px;
+      color: rgba(250,246,238,0.65);
+      font-size: 0.8rem; letter-spacing: 0.04em;
+      transition: color 0.25s, border-color 0.25s, background 0.25s, transform 0.25s;
+    }
+    .social-link svg { flex-shrink: 0; transition: transform 0.25s; }
+    .social-link:hover {
+      color: var(--ivory);
+      border-color: var(--gold);
+      background: rgba(184,146,58,0.1);
+      transform: translateY(-2px);
+    }
+    .social-link:hover svg { transform: scale(1.12); }
+    .footer-col h4 {
+      font-size: 0.72rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .footer-col li a {
+      font-size: 0.88rem; color: rgba(250,246,238,0.45);
+      transition: color 0.2s;
+    }
+    .footer-col li a:hover { color: var(--ivory); }
+    .footer-bottom {
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(250,246,238,0.08);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.78rem; color: rgba(250,246,238,0.3); }
+    .footer-bottom a { color: var(--gold); transition: color 0.2s; }
+    .footer-bottom a:hover { color: var(--gold-light); }
+
+    /* ─── MOBILE NAV ────────────────────────────────────────── */
+    .mobile-menu {
+      display: none;
+      position: fixed; inset: 0; z-index: 99;
+      background: var(--dark);
+      flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 2rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--ff-display);
+      font-size: 2rem; font-weight: 500;
+      color: var(--ivory);
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+    .mobile-close {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      background: none; border: none;
+      color: var(--ivory); font-size: 1.75rem;
+      cursor: pointer;
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .about-image-frame { max-width: 480px; }
+      .footer-main { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item:nth-child(1) { grid-column: span 2; }
+      .gallery-item:nth-child(5) { grid-column: span 1; }
+      .gallery-item:nth-child(8) { grid-column: span 1; }
+    }
+    @media (max-width: 768px) {
+      :root { --nav-h: 60px; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      /* Lighter nav on mobile — a heavy fixed backdrop-blur over scrolling
+         content is a common source of scroll jank on phones. */
+      #nav { background: rgba(250,246,238,0.94); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+      .timeline-line { left: 20px; }
+      .timeline-item { grid-template-columns: 40px 1fr; }
+      .timeline-item:nth-child(even) .tl-content { grid-column: 2; text-align: left; }
+      .timeline-item:nth-child(even) .tl-empty { display: none; }
+      .tl-dot { grid-column: 1; padding-top: 1.5rem; }
+      .tl-content { grid-column: 2; }
+      .tl-empty { display: none; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.15); }
+      .event-item { grid-template-columns: 80px 1fr; }
+      .event-cta { display: none; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .donate-tiers { grid-template-columns: repeat(3, 1fr); }
+      .footer-main { grid-template-columns: 1fr; gap: 2.5rem; padding-bottom: 3rem; }
+    }
+    @media (max-width: 640px) {
+      .donate-pay-grid { grid-template-columns: 1fr; }
+      .bank-row { grid-template-columns: 1fr; gap: 0.1rem; }
+    }
+    @media (max-width: 480px) {
+      .donate-tiers { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:nth-child(1) { grid-column: span 1; }
+    }
+
+    /* ─── LANGUAGE TOGGLE ─────────────────────────────────────── */
+    .lang-toggle {
+      display: flex; align-items: center; gap: 0.1rem;
+      margin-left: 1.25rem;
+      padding: 0.2rem 0.35rem;
+      border: 1px solid rgba(184,146,58,0.45);
+      border-radius: 999px;
+      background: rgba(184,146,58,0.06);
+      flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: none;
+      font-family: var(--ff-body);
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      line-height: 1;
+      transition: color 0.25s, background 0.25s;
+    }
+    .lang-btn[lang="as"] { font-family: var(--ff-assamese); font-size: 0.95rem; padding-top: 0.15rem; padding-bottom: 0.15rem; }
+    .lang-btn:hover { color: var(--crimson); }
+    .lang-btn.active {
+      color: var(--ivory);
+      background: var(--crimson);
+    }
+    .lang-sep { width: 1px; height: 14px; background: rgba(184,146,58,0.4); }
+
+    /* When Assamese is active, use the Bengali serif across the board */
+    body.lang-as,
+    body.lang-as h1, body.lang-as h2, body.lang-as h3, body.lang-as h4,
+    body.lang-as .section-title, body.lang-as .hero-title,
+    body.lang-as .nav-brand-en, body.lang-as .tl-event,
+    body.lang-as .member-name, body.lang-as .event-name,
+    body.lang-as p, body.lang-as a, body.lang-as label,
+    body.lang-as button, body.lang-as cite, body.lang-as .section-eyebrow,
+    body.lang-as .hero-eyebrow, body.lang-as input, body.lang-as textarea, body.lang-as select {
+      font-family: var(--ff-assamese) !important;
+    }
+    /* Assamese runs a touch larger line-height for legibility */
+    body.lang-as .tl-desc, body.lang-as .about-text p,
+    body.lang-as .donate-desc, body.lang-as .hero-desc { line-height: 1.85; }
+    /* Keep the toggle's own EN button in Latin even in AS mode */
+    body.lang-as .lang-btn[data-lang="en"] { font-family: var(--ff-body) !important; }
+    /* Hero subtitle is redundant once the title itself is Assamese */
+    body.lang-as .hero-title-as { display: none; }
+
+    /* ─── PREFERS REDUCED MOTION ─────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal-left, .reveal-right, .reveal-dot,
+      .hero-scroll-line, .timeline-line,
+      .tl-content, .btn-primary, .btn-outline
+        { animation: none !important; transition: none !important; }
+      .reveal, .reveal-left, .reveal-right, .reveal-dot { opacity: 1; transform: none; }
+      .timeline-line { clip-path: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════ NAV ══════════════════ -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-brand" aria-label="Tarajan Sanmilan home">
+        <img src="logo1.jpg" alt="Tarajan Sanmilan centenary logo" class="nav-logo">
+        <div class="nav-brand-text">
+          <span class="nav-brand-en">Tarajan Sanmilan</span>
+          <span class="nav-brand-as">তৰাজান সন্মিলন · 1927</span>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#timeline">History</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#leadership">The Heritage Vault</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#donate" class="nav-cta">Donate</a></li>
+      </ul>
+      <div class="lang-toggle" role="group" aria-label="Select language / ভাষা বাছনি কৰক">
+        <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+        <span class="lang-sep" aria-hidden="true"></span>
+        <button type="button" class="lang-btn" data-lang="as" aria-pressed="false" lang="as">অ</button>
+      </div>
+      <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Navigation">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">&#x2715;</button>
+    <a href="#about"       onclick="closeMenu()">About</a>
+    <a href="#timeline"    onclick="closeMenu()">History</a>
+    <a href="#gallery"     onclick="closeMenu()">Gallery</a>
+    <a href="#leadership"  onclick="closeMenu()">The Heritage Vault</a>
+    <a href="#events"      onclick="closeMenu()">Events</a>
+    <a href="#donate"      onclick="closeMenu()">Donate</a>
+    <a href="#contact"     onclick="closeMenu()">Contact</a>
+    <div class="lang-toggle" role="group" aria-label="Select language / ভাষা বাছনি কৰক" style="margin:1.5rem auto 0;">
+      <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+      <span class="lang-sep" aria-hidden="true"></span>
+      <button type="button" class="lang-btn" data-lang="as" aria-pressed="false" lang="as">অ</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════ HERO ══════════════════ -->
+  <section id="hero" aria-labelledby="hero-title">
+
+    <!-- LEFT cell — crimson dark with text -->
+    <div class="hero-left">
+      <!-- Ghost seal -->
+      <img src="logo1.jpg" class="hero-seal" alt="" aria-hidden="true">
+
+      <div class="hero-content">
+        <img src="logo1.jpg" alt="Tarajan Sanmilan emblem — established 1927"
+             style="width:clamp(84px,8vw,116px);margin:0 0 1.5rem;display:block;border-radius:16px;border:1px solid rgba(212,175,106,0.55);box-shadow:0 0 34px rgba(184,146,58,0.32),0 10px 40px rgba(0,0,0,0.35);">
+        <p class="hero-eyebrow" aria-label="Centenary celebration 2027">
+          Centenary Celebration &nbsp;·&nbsp; শতবাৰ্ষিকী উৎসৱ
+        </p>
+        <h1 class="hero-title" id="hero-title">Tarajan<br>Sanmilan</h1>
+        <p class="hero-title-as" lang="as">তৰাজান সন্মিলন</p>
+        <div class="hero-year-badge" aria-label="Founded 1927, Centenary 2027">
+          <span>Est. 1927</span>
+          <span class="dot" aria-hidden="true">◆</span>
+          <span>Centenary 2027</span>
+        </div>
+        <p class="hero-desc">
+          A century of unity, culture, and community in the heartland of Assam.
+          Preserving heritage. Inspiring generations.
+        </p>
+        <div class="hero-actions">
+          <a href="#about" class="btn-primary">Explore Our Story</a>
+          <a href="#donate" class="btn-outline">Support the Centenary</a>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="hero-scroll-line"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT cell — mandir with royal blue wash -->
+    <div class="hero-right" aria-hidden="true">
+      <img src="mandir1.jpeg" class="hero-mandir-img" alt="Tarajan Sanmilan Puja Mandir" fetchpriority="high">
+      <div class="hero-mandir-badge">
+        <span>পূজা মন্দিৰ</span>
+        <small>Tarajan · Est. 1927</small>
+      </div>
+      <div class="hero-mandir-stamp">
+        <span class="hero-mandir-stamp-year">2027</span>
+        <span class="hero-mandir-stamp-label">Centenary Year</span>
+      </div>
+    </div>
+
+    <!-- Gold divider -->
+    <div class="hero-divider" aria-hidden="true"></div>
+
+  </section>
+
+  <!-- ══════════════════ GAMOSA STRIP ══════════════════ -->
+  <div class="gamosa-strip" aria-hidden="true"></div>
+
+  <!-- ══════════════════ STATS ══════════════════ -->
+  <section id="stats" aria-label="Key statistics">
+    <div class="container">
+      <div class="stats-inner">
+        <div class="stat-item reveal">
+          <div class="stat-num" data-target="97" data-suffix="+" aria-label="97 years">97<sup>+</sup></div>
+          <div class="stat-label">Years of Service</div>
+          <span class="stat-accent" aria-hidden="true"></span>
+        </div>
+        <div class="stat-item reveal" style="transition-delay:0.1s">
+          <div class="stat-num" data-target="500" data-suffix="+" aria-label="Over 500 members">500<sup>+</sup></div>
+          <div class="stat-label">Active Members</div>
+          <span class="stat-accent" aria-hidden="true"></span>
+        </div>
+        <div class="stat-item reveal" style="transition-delay:0.2s">
+          <div class="stat-num" data-target="200" data-suffix="+" aria-label="Over 200 events">200<sup>+</sup></div>
+          <div class="stat-label">Events Hosted</div>
+          <span class="stat-accent" aria-hidden="true"></span>
+        </div>
+        <div class="stat-item reveal" style="transition-delay:0.3s">
+          <div class="stat-num" data-target="2027" data-suffix="" aria-label="2027">2027</div>
+          <div class="stat-label">Centenary Year</div>
+          <span class="stat-accent" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ ABOUT ══════════════════ -->
+  <section id="about" class="section-pad" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-frame reveal-left">
+          <div class="anthem-panel" role="img" aria-label="প্ৰতীক গীত — তৰাজান সন্মিলন (anthem of Tarajan Sanmilan)">
+            <svg viewBox="0 0 600 1086" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                 font-family="'Noto Serif Bengali', serif">
+              <!-- borders -->
+              <rect x="16" y="16" width="568" height="1054" fill="none" stroke="#B8923A" stroke-width="1.5"/>
+              <rect x="24" y="24" width="552" height="1038" fill="none" stroke="#B8923A" stroke-width="0.6" opacity="0.6"/>
+              <!-- top ornament -->
+              <text x="300" y="72" text-anchor="middle" font-size="20" fill="#B8923A">&#9670;</text>
+              <!-- title -->
+              <text x="300" y="118" text-anchor="middle" font-size="36" font-weight="600" fill="#7A1020">প্ৰতীক গীত</text>
+              <text x="300" y="146" text-anchor="middle" font-size="18" fill="#B8923A" letter-spacing="2">তৰাজান সন্মিলন</text>
+              <line x1="225" y1="162" x2="375" y2="162" stroke="#B8923A" stroke-width="0.8" opacity="0.7"/>
+              <!-- verses -->
+              <text text-anchor="middle" font-size="16.5" fill="#3A1010">
+                <tspan x="300" y="200">শঙ্খ, ঘণ্টা, দবা, উৰুলিৰে মুখৰিত</tspan>
+                <tspan x="300" dy="26">আজিৰ এই পূজাৰ বেদী</tspan>
+                <tspan x="300" dy="26">তৰাজান সন্মিলন মন্দিৰ প্ৰাঙ্গন</tspan>
+                <tspan x="300" dy="26">অগণন ভক্তৰ মিলনভূমি</tspan>
+                <tspan x="300" dy="26">গন্ধে, পুস্পে ভৰা সুৱাসত, মতলীয়া</tspan>
+                <tspan x="300" dy="26">চৌদিশে মঙ্গল ধ্বনি</tspan>
+                <tspan x="300" dy="26" fill="#7A1020" font-weight="600">তৰাজান সন্মিলন — — মিলনভূমি</tspan>
+
+                <tspan x="300" dy="42">মা দূৰ্গাৰ দুটি চৰণ ধৰি</tspan>
+                <tspan x="300" dy="26">আৰতি অৰ্চনাত মগ্ন</tspan>
+                <tspan x="300" dy="26">ধ্যানৰ অন্তত দেবীৰ চৰণ চুমি</tspan>
+                <tspan x="300" dy="26">ভক্ত ধন্য হয় এই পূণ্যভূমিত</tspan>
+                <tspan x="300" dy="26" fill="#7A1020" font-weight="600">তৰাজান সন্মিলন — — মিলনভূমি</tspan>
+
+                <tspan x="300" dy="42">সাৰ্বজনীন পূজাৰ মঞ্চ ইয়ে</tspan>
+                <tspan x="300" dy="26">সংস্কৃতিৰো বৰঘৰ</tspan>
+                <tspan x="300" dy="26">সৃষ্টি হয় ইয়াত বাৰেৰহনীয়া</tspan>
+                <tspan x="300" dy="26">নৃত্য-নাট্য সুৰ বিনন্দিয়া</tspan>
+                <tspan x="300" dy="26">সেই সুৰৰে প্ৰেৰণা প্ৰভু তুমি</tspan>
+                <tspan x="300" dy="26" fill="#7A1020" font-weight="600">তৰাজান সন্মিলন — — মিলনভূমি</tspan>
+
+                <tspan x="300" dy="42">শংকৰ, মাধৱৰ নামঘোষা বৰগীত</tspan>
+                <tspan x="300" dy="26">আজান পীৰৰ জিকিৰে</tspan>
+                <tspan x="300" dy="26">শুদ্ধ কৰে মন, ভক্তিভাৱেৰে</tspan>
+                <tspan x="300" dy="26">তাতে আহি কণমানি মইনাহঁতে</tspan>
+                <tspan x="300" dy="26">আঁকি দিয়ে সপোনৰ পাৰিজাত কাননৰ</tspan>
+                <tspan x="300" dy="26">আশাৰ ছবি এখনি</tspan>
+                <tspan x="300" dy="26">তৰাজান সন্মিলন মন্দিৰ প্ৰাঙ্গন</tspan>
+                <tspan x="300" dy="26">অগণন ভক্তৰ মিলনভূমি</tspan>
+                <tspan x="300" dy="26" fill="#7A1020" font-weight="600">শঙ্খ, ঘণ্টা, দবা — — মিলন ভূমি</tspan>
+              </text>
+              <!-- credits -->
+              <line x1="250" y1="940" x2="350" y2="940" stroke="#B8923A" stroke-width="0.7" opacity="0.6"/>
+              <text x="300" y="972" text-anchor="middle" font-size="15.5" fill="#7A4A4A">গীতিকাৰ — নবাব ম: ৰফিক</text>
+              <text x="300" y="998" text-anchor="middle" font-size="15.5" fill="#7A4A4A">সুৰকাৰ — মিহিৰ বেজবৰুৱা</text>
+              <!-- bottom ornament -->
+              <text x="300" y="1042" text-anchor="middle" font-size="20" fill="#B8923A">&#9670;</text>
+            </svg>
+          </div>
+          <div class="about-frame-deco" aria-hidden="true"></div>
+        </div>
+        <div class="about-text reveal-right">
+          <p class="section-eyebrow">Our Story · আমাৰ কাহিনী</p>
+          <h2 class="section-title" id="about-title">A Century of<br><em>Community & Pride</em></h2>
+          <p>
+            Tarajan is a locality at the heart of Jorhat city. This name is mentioned in the
+            Tungkhungia Chronicles. The name Tarajan comes from the name of the rivulet that flows
+            through the area. There were many black galangal plants (in Assamese, Taragosh) on both
+            sides of the rivulet at that time, and hence the name of the rivulet became Tarajan —
+            'Jan' being the Assamese term for a rivulet. In the Tarajan locality, on an August day
+            of 1918, a club named Asomiya Lorar Charitra Gothon Sabha was established. This was the
+            first public organization in the Tarajan area, which is now extinct. This club helped
+            organize the youth of the area to advance in sports. Under the banner of this club, in
+            1927, a new organization — the Tarajan Sanmilan — was established. In Tarajan, Durga Puja
+            had been celebrated prior to the formation of Tarajan Sanmilan, but in a casual manner.
+            After the formation of Tarajan Sanmilan it became regular under its aegis. Simultaneously,
+            the Tarajan Sanmilan also started activities for the cultural upbringing of the locality.
+            During the Puja days, in the first year of its establishment, two plays were staged —
+            Jahnnavi and Rana Pratap Singh.
+          </p>
+          <p>
+            At that time, the Tarajan Sanmilan had no land of its own. Later, the late Bipin Chandra
+            Bardoloi, EAC of Jorhat, allocated the necessary government land for the Tarajan Sanmilan.
+            He was employed in Jorhat from 1912 to 1929, and during that time, through the efforts of
+            various others including him, the Tarajan Sanmilan gained a limited permanent form with
+            wooden and iron poles. Many of the people who led the Tarajan Sanmilan in the early years
+            were pioneers in various fields of Jorhat and Assam. Among these were Advocate late
+            Purnananda Sharma Pathak and Advocate late Jadunath Barua — these two held important
+            portfolios like President and Vice-President of the Jorhat Municipal Board during the then
+            British rule. This list also includes late Radhanath Barthakur, who was the founder of the
+            prestigious Happy Lodge hotels in Shillong and Guwahati. Similarly, late Umacharan Baruah
+            was a prominent tea planter.
+          </p>
+          <p>
+            Apart from theatre performances and Durga Puja celebrations, the Tarajan Sanmilan has been
+            doing much work for the social and spiritual upliftment of the area. The late Samar
+            Bordoloi, one of the pioneer body builders of Assam, inspired and trained a number of
+            teenagers and youths at the Tarajan Sanmilan premises in the 1980s.
+          </p>
+          <blockquote class="about-quote">
+            <p>"Where community gathers, culture lives on."</p>
+            <cite>— Founding Charter, 1927 · প্ৰতিষ্ঠাপক গোচৰ</cite>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ GAMOSA STRIP ══════════════════ -->
+  <div class="gamosa-strip-thin" aria-hidden="true"></div>
+
+  <!-- ══════════════════ TIMELINE ══════════════════ -->
+  <section id="timeline" class="section-pad" aria-labelledby="timeline-title">
+    <div class="container">
+      <div class="timeline-header">
+        <p class="section-eyebrow" style="justify-content:center">
+          100 Years · ১০০ বছৰ
+        </p>
+        <h2 class="section-title" id="timeline-title">A Century of <em>Milestones</em></h2>
+        <p>From humble beginnings in 1927 to a vibrant centenary, each decade has written its own chapter.</p>
+      </div>
+
+      <div class="timeline-track">
+
+        <!-- 1927 -->
+        <div class="timeline-item reveal">
+          <div class="tl-content">
+            <div class="tl-year">1927</div>
+            <div class="tl-event">Foundation</div>
+            <p class="tl-desc">Tarajan Sanmilan is established in the Tarajan locality of Jorhat, Assam.</p>
+          </div>
+          <div class="tl-dot" aria-hidden="true"><div class="tl-dot-inner"></div></div>
+          <div class="tl-empty"></div>
+        </div>
+
+        <!-- 1928 -->
+        <div class="timeline-item reveal" style="transition-delay:0.05s">
+          <div class="tl-empty"></div>
+          <div class="tl-dot" aria-hidden="true"><div class="tl-dot-inner"></div></div>
+          <div class="tl-content">
+            <div class="tl-year">1928</div>
+            <div class="tl-event">The First Stage</div>
+            <p class="tl-desc">Bipin Bardoloi and Indreswar Saikia gather four iron posts and a few wooden posts to raise the Sanmilan's first temporary stage.</p>
+          </div>
+        </div>
+
+        <!-- 1960 -->
+        <div class="timeline-item reveal" style="transition-delay:0.1s">
+          <div class="tl-content">
+            <div class="tl-year">1960</div>
+            <div class="tl-event">The Constitution</div>
+            <p class="tl-desc">The Sanmilan's formal rules are framed in 1960, and later amended in 1978 and 2001.</p>
+          </div>
+          <div class="tl-dot" aria-hidden="true"><div class="tl-dot-inner"></div></div>
+          <div class="tl-empty"></div>
+        </div>
+
+        <!-- 1978 -->
+        <div class="timeline-item reveal" style="transition-delay:0.15s">
+          <div class="tl-empty"></div>
+          <div class="tl-dot" aria-hidden="true"><div class="tl-dot-inner"></div></div>
+          <div class="tl-content">
+            <div class="tl-year">1978</div>
+            <div class="tl-event">Three Committees</div>
+            <p class="tl-desc">From 1927 to 1978 the Sanmilan ran under a single committee. In 1978 it is reorganised into three wings — the Central Committee, the Puja Committee and the Cultural Committee.</p>
+          </div>
+        </div>
+
+        <!-- 1996 -->
+        <div class="timeline-item reveal" style="transition-delay:0.2s">
+          <div class="tl-content">
+            <div class="tl-year">1996</div>
+            <div class="tl-event">Emblem &amp; Flag</div>
+            <p class="tl-desc">The Sanmilan adopts an official emblem and a flag bearing that emblem.</p>
+          </div>
+          <div class="tl-dot" aria-hidden="true"><div class="tl-dot-inner"></div></div>
+          <div class="tl-empty"></div>
+        </div>
+
+        <!-- 2001 -->
+        <div class="timeline-item reveal" style="transition-delay:0.25s">
+          <div class="tl-empty"></div>
+          <div class="tl-dot" aria-hidden="true"><div class="tl-dot-inner"></div></div>
+          <div class="tl-content">
+            <div class="tl-year">2001</div>
+            <div class="tl-event">Platinum Jubilee</div>
+            <p class="tl-desc">The Sanmilan celebrates its Platinum Jubilee. Its commemorative souvenir চয়নিকা (Choynika), edited by the late Mahesh Chandra Bhattacharya, becomes the Sanmilan's first published document.</p>
+          </div>
+        </div>
+
+        <!-- 2007 -->
+        <div class="timeline-item reveal" style="transition-delay:0.3s">
+          <div class="tl-content">
+            <div class="tl-year">2007</div>
+            <div class="tl-event">The 'Tarajan' Journal</div>
+            <p class="tl-desc">The Sanmilan's annual journal 'Tarajan' is published for the first time.</p>
+          </div>
+          <div class="tl-dot" aria-hidden="true"><div class="tl-dot-inner"></div></div>
+          <div class="tl-empty"></div>
+        </div>
+
+        <!-- 2012 -->
+        <div class="timeline-item reveal" style="transition-delay:0.35s">
+          <div class="tl-empty"></div>
+          <div class="tl-dot" aria-hidden="true"><div class="tl-dot-inner"></div></div>
+          <div class="tl-content">
+            <div class="tl-year">2012</div>
+            <div class="tl-event">Women's Forum</div>
+            <p class="tl-desc">The Tarajan Mahila Chora (Women's Forum) is founded on 3 June 2012.</p>
+          </div>
+        </div>
+
+        <!-- 2018–19 -->
+        <div class="timeline-item reveal" style="transition-delay:0.4s">
+          <div class="tl-content">
+            <div class="tl-year">2018–19</div>
+            <div class="tl-event">A New Home</div>
+            <p class="tl-desc">Construction of the Sanmilan's new premises begins under a new project.</p>
+          </div>
+          <div class="tl-dot" aria-hidden="true"><div class="tl-dot-inner"></div></div>
+          <div class="tl-empty"></div>
+        </div>
+
+        <!-- 2027 -->
+        <div class="timeline-item reveal" style="transition-delay:0.45s">
+          <div class="tl-empty"></div>
+          <div class="tl-dot" aria-hidden="true"><div class="tl-dot-inner" style="background:var(--gold-light);box-shadow:0 0 0 6px rgba(184,146,58,0.4),0 0 20px rgba(184,146,58,0.3)"></div></div>
+          <div class="tl-content">
+            <div class="tl-year">2027</div>
+            <div class="tl-event">Centenary — 100 Years</div>
+            <p class="tl-desc">A year-long celebration marks a century of service, culture and community. The journey continues into the next hundred years.</p>
+          </div>
+        </div>
+
+        <div class="timeline-line" aria-hidden="true"></div>
+      </div>
+
+      <!-- Traditions of the formative years -->
+      <div class="history-sub">
+        <div class="history-sub-head reveal">
+          <p class="section-eyebrow" style="justify-content:center">Early Years · আৰম্ভণিৰ পৰম্পৰা</p>
+          <h3 class="history-sub-title" id="trad-title">Traditions of the <em>Formative Years</em></h3>
+        </div>
+        <div class="tradition-grid">
+          <article class="tradition-card reveal">
+            <h4>Worship &amp; the Idols</h4>
+            <p>In the earliest years, worship was offered before a sacred ghat rather than an idol. Later, idols crafted by the father of the late Makhan Sharma of Tarajan Brahmin village were used; from 1960, idols made by professional artists were introduced.</p>
+          </article>
+          <article class="tradition-card reveal" style="transition-delay:0.08s">
+            <h4>Painted Backdrops &amp; 'Siraj'</h4>
+            <p>Early plays used no modern stagecraft; painted backdrops of palaces, forests and more were hung to evoke each setting. They were painted by Lakshiram Baruah, who studied fine art in Calcutta and served as drawing master at Jorhat Government School. The first play staged with such scenery was 'Siraj', conceived by Nab Baruah.</p>
+          </article>
+          <article class="tradition-card reveal" style="transition-delay:0.16s">
+            <h4>The First Actress — 'Fulor Mel'</h4>
+            <p>The first woman to perform on the Sanmilan stage appeared in the dance-drama 'Fulor Mel', written, composed and directed by Deven Chakravarty. Until then, men had played the women's roles.</p>
+          </article>
+          <article class="tradition-card reveal" style="transition-delay:0.24s">
+            <h4>A Permanent Auditorium</h4>
+            <p>During Purnananda Sharma Pathak's tenure as secretary, the auditorium was built in permanent form with brick and lime.</p>
+          </article>
+          <article class="tradition-card reveal" style="transition-delay:0.32s">
+            <h4>The Puja Ghar</h4>
+            <p>While Radhanath Barthakur was president, he had the puja house built permanently at his own expense; its front portion was later added by the Sanmilan's puja branch through public donations.</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- Founding-era leadership honour roll -->
+      <div class="history-sub reveal">
+        <div class="history-sub-head">
+          <p class="section-eyebrow" style="justify-content:center">Founding-Era Leadership · প্ৰতিষ্ঠাকালীন নেতৃত্ব</p>
+          <h3 class="history-sub-title" id="honor-title">Those Who <em>Led</em> · 1927–1978</h3>
+        </div>
+        <div class="honor-cols">
+          <div class="honor-col">
+            <h4 class="honor-col-title">Presidents <span lang="as">সভাপতি</span></h4>
+            <ul class="honor-list">
+              <li><span class="hn-en">Bipin Bardoloi</span><span class="hn-as">বিপিন বৰদলৈ</span></li>
+              <li><span class="hn-en">Gyanat Ahmed <em>(Dr. Diyanat Uddin Ahmed / Hakim Diyanat Ullah)</em></span><span class="hn-as">জ্ঞানৎ আহমেদ (ডাঃ দিয়ানত উদ্দিন আহমেদ / হেকিম দিয়ানত উল্লাহ)</span></li>
+              <li><span class="hn-en">Jadu Baruah</span><span class="hn-as">যদু বৰুৱা</span></li>
+              <li><span class="hn-en">Padmeswar Bardoloi</span><span class="hn-as">পদ্মেশ্বৰ বৰদলৈ</span></li>
+              <li><span class="hn-en">Dharmeswar Baruah</span><span class="hn-as">ধৰ্মেশ্বৰ বৰুৱা</span></li>
+              <li><span class="hn-en">Radhanath Barthakur</span><span class="hn-as">ৰাধানাথ বৰঠাকুৰ</span></li>
+              <li><span class="hn-en">Umacharan Baruah</span><span class="hn-as">উমাচৰণ বৰুৱা</span></li>
+              <li><span class="hn-en">Gaurinath Barthakur</span><span class="hn-as">গৌৰীনাথ বৰঠাকুৰ</span></li>
+              <li><span class="hn-en">Taranath Bhattacharya</span><span class="hn-as">তাৰানাথ ভট্টাচাৰ্য্য</span></li>
+              <li><span class="hn-en">Harendranath Sharma</span><span class="hn-as">হৰেন্দ্ৰনাথ শৰ্মা</span></li>
+            </ul>
+          </div>
+          <div class="honor-col">
+            <h4 class="honor-col-title">Secretaries <span lang="as">সম্পাদক</span></h4>
+            <ul class="honor-list">
+              <li><span class="hn-en">Phani Bora</span><span class="hn-as">ফণী বৰা</span></li>
+              <li><span class="hn-en">Golap Bora</span><span class="hn-as">গোলাপ বৰা</span></li>
+              <li><span class="hn-en">Deven Bora</span><span class="hn-as">দেৱেন বৰা</span></li>
+              <li><span class="hn-en">Suren Khaund</span><span class="hn-as">সুৰেণ খাউণ্ড</span></li>
+              <li><span class="hn-en">Krishna Bardoloi</span><span class="hn-as">কৃষ্ণ বৰদলৈ</span></li>
+              <li><span class="hn-en">Purnananda Sharma Pathak</span><span class="hn-as">পূৰ্ণানন্দ শৰ্মা পাঠক</span></li>
+              <li><span class="hn-en">Hem Baruah <em>(Manik Baruah)</em></span><span class="hn-as">হেম বৰুৱা (মাণিক বৰুৱা)</span></li>
+              <li><span class="hn-en">Lakheswar Bhattacharya</span><span class="hn-as">লক্ষেশ্বৰ ভট্টাচাৰ্য</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ GALLERY ══════════════════ -->
+  <section id="gallery" class="section-pad" aria-labelledby="gallery-title">
+    <div class="container">
+      <div class="gallery-header reveal">
+        <p class="section-eyebrow" style="justify-content:center">Photo Archive · ফটো আৰ্কাইভ</p>
+        <h2 class="section-title" id="gallery-title">Moments That <em>Shaped History</em></h2>
+      </div>
+      <div class="gallery-grid" role="list">
+
+        <div class="gallery-item reveal" role="listitem" tabindex="0" aria-label="Founding members, 1927">
+          <div class="gallery-placeholder gp-1">
+            <div class="gallery-placeholder-inner">
+              <svg class="gallery-ph-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span class="gallery-ph-label">Founding Members · 1927</span>
+            </div>
+          </div>
+          <div class="gallery-overlay"><span class="gallery-overlay-text">Founding Members · 1927</span></div>
+        </div>
+
+        <div class="gallery-item reveal" style="transition-delay:0.05s" role="listitem" tabindex="0" aria-label="First Bihu celebration, 1935">
+          <div class="gallery-placeholder gp-2">
+            <div class="gallery-placeholder-inner">
+              <svg class="gallery-ph-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span class="gallery-ph-label">Bihu Celebration · 1935</span>
+            </div>
+          </div>
+          <div class="gallery-overlay"><span class="gallery-overlay-text">First Bihu Celebration · 1935</span></div>
+        </div>
+
+        <div class="gallery-item reveal" style="transition-delay:0.1s" role="listitem" tabindex="0" aria-label="Independence Day 1947">
+          <div class="gallery-placeholder gp-3">
+            <div class="gallery-placeholder-inner">
+              <svg class="gallery-ph-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span class="gallery-ph-label">Independence Day · 1947</span>
+            </div>
+          </div>
+          <div class="gallery-overlay"><span class="gallery-overlay-text">Independence Day Gathering · 1947</span></div>
+        </div>
+
+        <div class="gallery-item reveal" style="transition-delay:0.15s" role="listitem" tabindex="0" aria-label="Clubhouse inauguration 1960">
+          <div class="gallery-placeholder gp-4">
+            <div class="gallery-placeholder-inner">
+              <svg class="gallery-ph-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span class="gallery-ph-label">Clubhouse Inauguration · 1960</span>
+            </div>
+          </div>
+          <div class="gallery-overlay"><span class="gallery-overlay-text">Clubhouse Inauguration · 1960</span></div>
+        </div>
+
+        <div class="gallery-item reveal" style="transition-delay:0.2s" role="listitem" tabindex="0" aria-label="Golden Jubilee 1977">
+          <div class="gallery-placeholder gp-5">
+            <div class="gallery-placeholder-inner">
+              <svg class="gallery-ph-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span class="gallery-ph-label">Golden Jubilee · 1977</span>
+            </div>
+          </div>
+          <div class="gallery-overlay"><span class="gallery-overlay-text">Golden Jubilee Celebrations · 1977</span></div>
+        </div>
+
+        <div class="gallery-item reveal" style="transition-delay:0.25s" role="listitem" tabindex="0" aria-label="Cultural performance">
+          <div class="gallery-placeholder gp-6">
+            <div class="gallery-placeholder-inner">
+              <svg class="gallery-ph-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span class="gallery-ph-label">Cultural Performance</span>
+            </div>
+          </div>
+          <div class="gallery-overlay"><span class="gallery-overlay-text">Cultural Performance</span></div>
+        </div>
+
+        <div class="gallery-item reveal" style="transition-delay:0.3s" role="listitem" tabindex="0" aria-label="Annual general meeting">
+          <div class="gallery-placeholder gp-7">
+            <div class="gallery-placeholder-inner">
+              <svg class="gallery-ph-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span class="gallery-ph-label">Annual Meeting · 2000s</span>
+            </div>
+          </div>
+          <div class="gallery-overlay"><span class="gallery-overlay-text">Annual General Meeting</span></div>
+        </div>
+
+        <div class="gallery-item reveal" style="transition-delay:0.35s" role="listitem" tabindex="0" aria-label="Community welfare program">
+          <div class="gallery-placeholder gp-8">
+            <div class="gallery-placeholder-inner">
+              <svg class="gallery-ph-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FAF6EE" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span class="gallery-ph-label">Community Welfare</span>
+            </div>
+          </div>
+          <div class="gallery-overlay"><span class="gallery-overlay-text">Community Welfare Programs</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ LEADERSHIP ══════════════════ -->
+  <section id="leadership" class="section-pad" aria-labelledby="leadership-title">
+    <div class="container">
+      <div class="leadership-header reveal">
+        <p class="section-eyebrow" style="justify-content:center">Flipping Back Time · সময়লৈ উভতি চোৱা</p>
+        <h2 class="section-title" id="leadership-title">Down Memory <em>Lane</em></h2>
+      </div>
+      <div class="vault-grid">
+
+        <article class="vault-card reveal">
+          <div class="vault-cover"><img src="2001.jpg" alt="Choynika — Tarajan Sanmilan Platinum Jubilee souvenir, 2001–2002" loading="lazy" decoding="async"></div>
+          <div class="vault-meta">
+            <p class="vault-tag">Souvenir Magazine · স্মৃতিগ্ৰন্থ</p>
+            <h3 class="vault-name">চয়নিকা<span lang="en">Choynika</span></h3>
+            <p class="vault-year">2001 – 2002</p>
+            <p class="vault-occasion">Platinum Jubilee · মহাৰজত জয়ন্তী</p>
+          </div>
+        </article>
+
+        <article class="vault-card reveal" style="transition-delay:0.05s">
+          <div class="vault-cover"><img src="2007.jpg" alt="Tarajan annual journal cover, 2007" loading="lazy" decoding="async"></div>
+          <div class="vault-meta">
+            <p class="vault-tag">Annual Journal · বাৰ্ষিক মুখপত্ৰ</p>
+            <h3 class="vault-name">তৰাজান<span lang="en">Tarajan</span></h3>
+            <p class="vault-year">2007</p>
+            <p class="vault-occasion">Inaugural Issue · প্ৰস্তাৱনা সংখ্যা</p>
+          </div>
+        </article>
+
+        <article class="vault-card reveal" style="transition-delay:0.1s">
+          <div class="vault-cover"><img src="2008.jpg" alt="Tarajan annual journal cover, 2008" loading="lazy" decoding="async"></div>
+          <div class="vault-meta">
+            <p class="vault-tag">Annual Journal · বাৰ্ষিক মুখপত্ৰ</p>
+            <h3 class="vault-name">তৰাজান<span lang="en">Tarajan</span></h3>
+            <p class="vault-year">2008</p>
+            <p class="vault-occasion">2nd Issue · দ্বিতীয় সংখ্যা</p>
+          </div>
+        </article>
+
+        <article class="vault-card reveal" style="transition-delay:0.15s">
+          <div class="vault-cover"><img src="2009.jpg" alt="Tarajan annual journal cover, 2009" loading="lazy" decoding="async"></div>
+          <div class="vault-meta">
+            <p class="vault-tag">Annual Journal · বাৰ্ষিক মুখপত্ৰ</p>
+            <h3 class="vault-name">তৰাজান<span lang="en">Tarajan</span></h3>
+            <p class="vault-year">2009</p>
+            <p class="vault-occasion">3rd Issue · তৃতীয় সংখ্যা</p>
+          </div>
+        </article>
+
+        <article class="vault-card reveal" style="transition-delay:0.2s">
+          <div class="vault-cover"><img src="2010.jpg" alt="Tarajan annual journal cover, 2010" loading="lazy" decoding="async"></div>
+          <div class="vault-meta">
+            <p class="vault-tag">Annual Journal · বাৰ্ষিক মুখপত্ৰ</p>
+            <h3 class="vault-name">তৰাজান<span lang="en">Tarajan</span></h3>
+            <p class="vault-year">2010</p>
+            <p class="vault-occasion">4th Issue · চতুৰ্থ সংখ্যা</p>
+          </div>
+        </article>
+
+        <article class="vault-card reveal" style="transition-delay:0.05s">
+          <div class="vault-cover"><img src="2011.jpg" alt="Tarajan annual journal cover, 2011" loading="lazy" decoding="async"></div>
+          <div class="vault-meta">
+            <p class="vault-tag">Annual Journal · বাৰ্ষিক মুখপত্ৰ</p>
+            <h3 class="vault-name">তৰাজান<span lang="en">Tarajan</span></h3>
+            <p class="vault-year">2011</p>
+            <p class="vault-occasion">5th Issue · পঞ্চম সংখ্যা</p>
+          </div>
+        </article>
+
+        <article class="vault-card reveal" style="transition-delay:0.1s">
+          <div class="vault-cover"><img src="2012.jpg" alt="Tarajan annual journal cover, 2012" loading="lazy" decoding="async"></div>
+          <div class="vault-meta">
+            <p class="vault-tag">Annual Journal · বাৰ্ষিক মুখপত্ৰ</p>
+            <h3 class="vault-name">তৰাজান<span lang="en">Tarajan</span></h3>
+            <p class="vault-year">2012</p>
+            <p class="vault-occasion">6th Issue · ষষ্ঠ সংখ্যা</p>
+          </div>
+        </article>
+
+        <article class="vault-card reveal" style="transition-delay:0.15s">
+          <div class="vault-cover"><img src="2013.jpg" alt="Tarajan annual journal cover, 2013" loading="lazy" decoding="async"></div>
+          <div class="vault-meta">
+            <p class="vault-tag">Annual Journal · বাৰ্ষিক মুখপত্ৰ</p>
+            <h3 class="vault-name">তৰাজান<span lang="en">Tarajan</span></h3>
+            <p class="vault-year">2013</p>
+            <p class="vault-occasion">7th Issue · সপ্তম সংখ্যা</p>
+          </div>
+        </article>
+
+        <article class="vault-card reveal" style="transition-delay:0.2s">
+          <div class="vault-cover"><img src="2014.jpg" alt="Tarajan annual journal cover, 2014" loading="lazy" decoding="async"></div>
+          <div class="vault-meta">
+            <p class="vault-tag">Annual Journal · বাৰ্ষিক মুখপত্ৰ</p>
+            <h3 class="vault-name">তৰাজান<span lang="en">Tarajan</span></h3>
+            <p class="vault-year">2014</p>
+            <p class="vault-occasion">8th Issue · অষ্টম সংখ্যা</p>
+          </div>
+        </article>
+
+        <article class="vault-card reveal" style="transition-delay:0.05s">
+          <div class="vault-cover"><img src="2016.jpg" alt="Tarajan annual journal cover, 2016" loading="lazy" decoding="async"></div>
+          <div class="vault-meta">
+            <p class="vault-tag">Annual Journal · বাৰ্ষিক মুখপত্ৰ</p>
+            <h3 class="vault-name">তৰাজান<span lang="en">Tarajan</span></h3>
+            <p class="vault-year">2016</p>
+            <p class="vault-occasion">9th Issue · নৱম সংখ্যা</p>
+          </div>
+        </article>
+
+        <article class="vault-card reveal" style="transition-delay:0.1s">
+          <div class="vault-cover"><img src="2018.jpg" alt="Tarajan annual journal cover, 2018" loading="lazy" decoding="async"></div>
+          <div class="vault-meta">
+            <p class="vault-tag">Annual Journal · বাৰ্ষিক মুখপত্ৰ</p>
+            <h3 class="vault-name">তৰাজান<span lang="en">Tarajan</span></h3>
+            <p class="vault-year">2018</p>
+            <p class="vault-occasion">10th Issue · দশম সংখ্যা</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ GAMOSA STRIP ══════════════════ -->
+  <div class="gamosa-strip" aria-hidden="true"></div>
+
+  <!-- ══════════════════ EVENTS ══════════════════ -->
+  <section id="events" class="section-pad" aria-labelledby="events-title">
+    <div class="container">
+      <div class="events-header reveal">
+        <p class="section-eyebrow">Centenary Programme · শতবৰ্ষৰ কাৰ্যসূচী</p>
+        <h2 class="section-title" id="events-title">The Centenary <em>Programme</em></h2>
+      </div>
+
+      <div class="prog-days">
+        <!-- Day 1 -->
+        <div class="prog-day reveal-left">
+          <div class="prog-day-head">
+            <div class="prog-date">28 July 2026</div>
+            <span class="prog-tag">Inauguration</span>
+          </div>
+          <div class="prog-list">
+            <div class="prog-row"><span class="prog-time">6:00 AM</span><span class="prog-text">Usha Kirtan &amp; cleansing of the premises</span></div>
+            <div class="prog-row"><span class="prog-time">7:30 AM</span><span class="prog-text">Puja archana — seeking the blessings of Lord Ganapati</span></div>
+            <div class="prog-row"><span class="prog-time">10:30 AM</span><span class="prog-text">Hoisting of the Sanmilan's 100 flags with mangalacharan</span></div>
+            <div class="prog-row"><span class="prog-time">11:00 AM</span><span class="prog-text">Smriti-tarpan — homage to the departed</span></div>
+            <div class="prog-row"><span class="prog-time">11:30 AM</span><span class="prog-text">The Sanmilan anthem performed by 100 members</span></div>
+            <div class="prog-row"><span class="prog-time">12:00 Noon</span><span class="prog-text">Distribution of saplings</span></div>
+            <div class="prog-row"><span class="prog-time">6:00 PM</span><span class="prog-text">Lighting of 100 lamps</span></div>
+          </div>
+        </div>
+        <!-- Day 2 -->
+        <div class="prog-day reveal-right">
+          <div class="prog-day-head">
+            <div class="prog-date">29 July 2026</div>
+            <span class="prog-tag">Day Two</span>
+          </div>
+          <div class="prog-list">
+            <div class="prog-row"><span class="prog-time">6:30 PM</span><span class="prog-text">Children's play performance</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prog-yearlong reveal">
+        <div class="prog-yearlong-head">
+          <p class="section-eyebrow" style="justify-content:center">Year-Long · বৰ্ষজোৰা কাৰ্যসূচী</p>
+          <h3 class="prog-yearlong-title">Through the Centenary Year</h3>
+        </div>
+        <div class="prog-chips">
+          <span class="prog-chip">History-based theatrical moments</span>
+          <span class="prog-chip">Themed competitions</span>
+          <span class="prog-chip">Talks with expatriate Tarajanians &amp; reminiscence</span>
+          <span class="prog-chip">Seminars</span>
+          <span class="prog-chip">Medical camp</span>
+          <span class="prog-chip">Drama festival</span>
+          <span class="prog-chip">Souvenir publication</span>
+          <span class="prog-chip">Annual religious &amp; cultural programmes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ DONATE ══════════════════ -->
+  <section id="donate" class="section-pad" aria-labelledby="donate-title">
+    <div class="donate-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="donate-inner reveal">
+        <div class="donate-ornament" aria-hidden="true"></div>
+        <div class="donate-ornament-2" aria-hidden="true">
+          <span>&#10022;</span>
+        </div>
+        <p class="section-eyebrow" style="justify-content:center">Support Us · সহায় কৰক</p>
+        <h2 class="section-title" id="donate-title">Help Us Honour<br><em>100 Years</em></h2>
+        <p class="donate-desc">
+          Your contribution sustains our cultural programs, preserves our archives, and funds the
+          centenary celebrations that will honour a century of community life in Assam.
+        </p>
+        <div class="donate-tiers" role="group" aria-label="Donation tiers">
+          <button class="donate-tier" onclick="selectTier(this)" aria-pressed="false">
+            <div class="tier-amount">₹5,000</div>
+            <div class="tier-label">Charter Member</div>
+          </button>
+          <button class="donate-tier active" onclick="selectTier(this)" aria-pressed="true">
+            <div class="tier-amount">₹10,000</div>
+            <div class="tier-label">Pioneer Member</div>
+          </button>
+          <button class="donate-tier" onclick="selectTier(this)" aria-pressed="false">
+            <div class="tier-amount">₹25,000</div>
+            <div class="tier-label">Patron</div>
+          </button>
+        </div>
+        <button class="donate-btn" type="button" aria-label="Proceed to donate">
+          Donate to the Centenary Fund
+        </button>
+        <p class="donate-note">All contributions are recognised in our centenary publication.</p>
+
+        <div class="donate-pay">
+          <p class="pay-heading">Or Contribute Directly · প্ৰত্যক্ষভাৱে</p>
+          <div class="donate-pay-grid">
+            <!-- UPI / BHIM -->
+            <div class="pay-card pay-upi">
+              <div class="pay-qr">
+                <img src="upi.jpg" alt="BHIM UPI QR code for Tarajan Sanmilan Centenary Fund" loading="lazy" decoding="async">
+              </div>
+              <p class="pay-qr-caption">Scan BHIM QR or use UPI ID</p>
+              <p class="pay-upi-id">9864254320@upi</p>
+            </div>
+            <!-- Bank details -->
+            <div class="pay-card pay-bank">
+              <h4 class="pay-bank-title">Bank Details</h4>
+              <dl class="bank-list">
+                <div class="bank-row"><dt class="bank-label">Account Name</dt><dd class="bank-value">Centenary Celebration Committee Tarajan</dd></div>
+                <div class="bank-row"><dt class="bank-label">Account Number</dt><dd class="bank-value">45188589857</dd></div>
+                <div class="bank-row"><dt class="bank-label">Bank Name</dt><dd class="bank-value">State Bank of India (SBI)</dd></div>
+                <div class="bank-row"><dt class="bank-label">IFSC Code</dt><dd class="bank-value">SBIN0009192</dd></div>
+                <div class="bank-row"><dt class="bank-label">Branch</dt><dd class="bank-value">Katakipukhuri, Jorhat – 785001</dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ CONTACT ══════════════════ -->
+  <section id="contact" class="section-pad" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="reveal-left">
+          <p class="section-eyebrow">Get in Touch · যোগাযোগ</p>
+          <h2 class="section-title" id="contact-title">Visit Us or<br><em>Get in Touch</em></h2>
+          <div class="contact-info">
+            <div class="contact-detail">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h4>Address</h4>
+                <p id="contact-addr">Tarajan Sanmilan<br>Tarajan, Jorhat – 785001, Assam, India</p>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <h4>Phone</h4>
+                <p>+91 XXXXX XXXXX</p>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <p>contact@tarajansamilan.org</p>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h4>Office Hours</h4>
+                <p id="contact-hours">Monday – Saturday<br>10:00 AM – 5:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form reveal-right" onsubmit="handleSubmit(event)" novalidate aria-label="Contact form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="fname" placeholder="Arun" required autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lname" placeholder="Borah" required autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="">Select a subject</option>
+              <option>Membership Enquiry</option>
+              <option>Centenary Events</option>
+              <option>Donation &amp; Sponsorship</option>
+              <option>Cultural Programme</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your message…" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════ GAMOSA STRIP ══════════════════ -->
+  <div class="gamosa-strip" aria-hidden="true"></div>
+
+  <!-- ══════════════════ FOOTER ══════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="logo1.jpg" alt="Tarajan Sanmilan logo" loading="lazy" decoding="async"
+               style="height:70px;width:auto;border-radius:11px;border:1px solid rgba(184,146,58,0.45);margin-bottom:0.85rem;box-shadow:0 4px 16px rgba(0,0,0,0.3);">
+          <h2>Tarajan Sanmilan</h2>
+          <p class="footer-brand-as">তৰাজান সন্মিলন</p>
+          <p>A century of community, culture, and heritage. Proudly rooted in Assam since 1927.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/people/%E0%A6%A4%E0%A7%B0%E0%A6%BE%E0%A6%9C%E0%A6%BE%E0%A6%A8-%E0%A6%B8%E0%A6%A8%E0%A7%8D%E0%A6%AE%E0%A6%BF%E0%A6%B2%E0%A6%A8/100083459080638/"
+               target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Tarajan Sanmilan on Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.02 4.39 11.01 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.08 24 18.09 24 12.07z"/>
+              </svg>
+              <span>Follow us on Facebook</span>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#timeline">Our History</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#leadership">The Heritage Vault</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Engage</h4>
+          <ul>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#donate">Donate</a></li>
+            <li><a href="#contact">Membership</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Centenary</h4>
+          <ul>
+            <li><a href="#donate">Centenary Fund</a></li>
+            <li><a href="#events">Centenary Events</a></li>
+            <li><a href="#timeline">100 Years</a></li>
+            <li><a href="#gallery">Photo Archive</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Tarajan Sanmilan. All rights reserved.</p>
+        <p>Designed with pride for the <a href="#donate">Centenary of 2027</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════ SCRIPTS ══════════════════ -->
+  <script>
+    // ── Scroll refs (combined rAF-throttled handler is defined further below)
+    const nav = document.getElementById('nav');
+    const mandirImg = document.querySelector('.hero-mandir-img');
+    // Parallax only runs on desktop; on mobile the mandir is a full-screen
+    // backdrop and repainting it every scroll frame causes jank.
+    const mqDesktop = window.matchMedia('(min-width: 769px)');
+    if (!mqDesktop.matches && mandirImg) mandirImg.style.objectPosition = '';
+    mqDesktop.addEventListener('change', e => {
+      if (!e.matches && mandirImg) mandirImg.style.objectPosition = '';
+    });
+
+    // ── Mobile menu
+    const burger     = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose= document.getElementById('mobileClose');
+    burger.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+      burger.setAttribute('aria-expanded', 'true');
+      mobileMenu.querySelector('a').focus();
+    });
+    mobileClose.addEventListener('click', closeMenu);
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.focus();
+    }
+    // Close on Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMenu();
+    });
+
+    // ── Timeline: direction-aware reveals + dot pop + line draw
+    document.querySelectorAll('.timeline-item').forEach((item, i) => {
+      item.classList.remove('reveal');
+      const content = item.querySelector('.tl-content');
+      const dot     = item.querySelector('.tl-dot-inner');
+      // Odd items have content on left; even on right
+      if (content) content.classList.add(i % 2 === 0 ? 'reveal-left' : 'reveal-right');
+      if (dot)     { dot.classList.add('reveal-dot'); dot.style.transitionDelay = (i * 0.07) + 's'; }
+    });
+
+    // Draw timeline line when section enters viewport
+    const timelineLine = document.querySelector('.timeline-line');
+    const lineObserver = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        timelineLine.classList.add('drawn');
+        lineObserver.disconnect();
+      }
+    }, { threshold: 0.1 });
+    if (timelineLine) lineObserver.observe(document.getElementById('timeline'));
+
+    // ── Scroll reveal (Intersection Observer)
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-dot');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    revealEls.forEach(el => io.observe(el));
+
+    // Fallback reveal — only scans the elements still pending, so it becomes
+    // a no-op once everything is revealed (no per-scroll layout thrash).
+    let pendingReveals = Array.from(revealEls);
+    function checkReveals() {
+      if (pendingReveals.length) {
+        const vh = window.innerHeight;
+        pendingReveals = pendingReveals.filter(el => {
+          const r = el.getBoundingClientRect();
+          if (r.top < vh * 0.96 && r.bottom > 0) { el.classList.add('visible'); io.unobserve(el); return false; }
+          return true;
+        });
+      }
+      if (timelineLine && !timelineLine.classList.contains('drawn')) {
+        const r = document.getElementById('timeline').getBoundingClientRect();
+        if (r.top < window.innerHeight) timelineLine.classList.add('drawn');
+      }
+    }
+
+    // ── Single rAF-throttled scroll handler (nav state + desktop parallax + reveals)
+    let scrollTicking = false;
+    function onScrollFrame() {
+      scrollTicking = false;
+      const sy = window.scrollY;
+      nav.classList.toggle('scrolled', sy > 50);
+      if (mqDesktop.matches && mandirImg && sy < window.innerHeight * 1.2) {
+        mandirImg.style.objectPosition = `center ${45 + sy * 0.014}%`;
+      }
+      checkReveals();
+    }
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(onScrollFrame); }
+    }, { passive: true });
+    requestAnimationFrame(checkReveals);
+
+    // ── Donation tier selection
+    function selectTier(btn) {
+      document.querySelectorAll('.donate-tier').forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
+    }
+
+    // ── Contact form
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      const orig = btn.textContent;
+      btn.textContent = 'Message Sent!';
+      btn.style.background = '#2A6A2A';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = orig;
+        btn.style.background = '';
+        btn.disabled = false;
+        e.target.reset();
+      }, 3500);
+    }
+
+    // ── Animate stat numbers on scroll
+    const statNumEls = [...document.querySelectorAll('#stats .stat-num')];
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const supFor = s => (s === '+' ? '<sup>+</sup>' : '');
+
+    // Avoid a flash of the final numbers before counting begins
+    if (!reduceMotion) statNumEls.forEach(el => { el.innerHTML = '0' + supFor(el.dataset.suffix); });
+
+    function animateCount(el, target, suffix, delay) {
+      const dur = 1700, sup = supFor(suffix);
+      let start = 0;
+      setTimeout(() => {
+        const step = ts => {
+          if (!start) start = ts;
+          const prog = Math.min((ts - start) / dur, 1);
+          const eased = 1 - Math.pow(1 - prog, 3);
+          el.innerHTML = Math.floor(eased * target) + sup;
+          if (prog < 1) requestAnimationFrame(step);
+          else { el.innerHTML = target + sup; void el.offsetWidth; el.classList.add('counted'); }
+        };
+        requestAnimationFrame(step);
+      }, delay);
+    }
+
+    const statSection = document.getElementById('stats');
+    let statsAnimated = false;
+    const statObserver = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && !statsAnimated) {
+        statsAnimated = true;
+        statObserver.disconnect();
+        if (reduceMotion) return;   // final numbers already in the markup
+        statNumEls.forEach((el, i) => {
+          animateCount(el, parseInt(el.dataset.target, 10), el.dataset.suffix || '', i * 160);
+        });
+      }
+    }, { threshold: 0.4 });
+    statObserver.observe(statSection);
+
+    /* ══════════════════ BILINGUAL TOGGLE (EN ⇄ অসমীয়া) ══════════════════ */
+    /* NOTE: Assamese translations below are an initial pass — recommend a
+       native speaker review before publishing. */
+    const T = {
+      // Nav + mobile
+      "About":"বিষয়ে", "History":"ইতিহাস", "Gallery":"ফটো", "The Heritage Vault":"ঐতিহ্যৰ ভঁৰাল",
+      "Events":"অনুষ্ঠান", "Contact":"যোগাযোগ", "Donate":"দান কৰক",
+      // Hero
+      "Centenary Celebration · শতবাৰ্ষিকী উৎসৱ":"শতবাৰ্ষিকী উৎসৱ",
+      "Est. 1927":"প্ৰতিষ্ঠা ১৯২৭", "Centenary 2027":"শতবৰ্ষ ২০২৭",
+      "A century of unity, culture, and community in the heartland of Assam. Preserving heritage. Inspiring generations.":
+        "অসমৰ হৃদয়ভূমিত এক শতাব্দীৰ ঐক্য, সংস্কৃতি আৰু সমাজ। ঐতিহ্য সংৰক্ষণ। প্ৰজন্মক অনুপ্ৰাণিত কৰা।",
+      "Explore Our Story":"আমাৰ কাহিনী চাওক", "Support the Centenary":"শতবৰ্ষলৈ সহায় কৰক",
+      "Scroll":"তললৈ",
+      // Stats
+      "Years of Service":"বছৰ সেৱা", "Active Members":"সক্ৰিয় সদস্য",
+      "Events Hosted":"আয়োজিত অনুষ্ঠান", "Centenary Year":"শতবৰ্ষ",
+      // About
+      "Founding Members, Circa 1927":"প্ৰতিষ্ঠাপক সদস্যসকল, প্ৰায় ১৯২৭",
+      "Our Story · আমাৰ কাহিনী":"আমাৰ কাহিনী",
+      "Tarajan is a locality at the heart of Jorhat city. This name is mentioned in the Tungkhungia Chronicles. The name Tarajan comes from the name of the rivulet that flows through the area. There were many black galangal plants (in Assamese, Taragosh) on both sides of the rivulet at that time, and hence the name of the rivulet became Tarajan — 'Jan' being the Assamese term for a rivulet. In the Tarajan locality, on an August day of 1918, a club named Asomiya Lorar Charitra Gothon Sabha was established. This was the first public organization in the Tarajan area, which is now extinct. This club helped organize the youth of the area to advance in sports. Under the banner of this club, in 1927, a new organization — the Tarajan Sanmilan — was established. In Tarajan, Durga Puja had been celebrated prior to the formation of Tarajan Sanmilan, but in a casual manner. After the formation of Tarajan Sanmilan it became regular under its aegis. Simultaneously, the Tarajan Sanmilan also started activities for the cultural upbringing of the locality. During the Puja days, in the first year of its establishment, two plays were staged — Jahnnavi and Rana Pratap Singh.":
+        "তৰাজান যোৰহাট চহৰৰ কেন্দ্ৰস্থলত অৱস্থিত এটা অঞ্চল। এই নামটো তুংখুঙীয়া বুৰঞ্জীত উল্লেখ আছে। অঞ্চলটোৰ মাজেৰে বৈ যোৱা জানটোৰ নামৰ পৰাই তৰাজান নামটোৰ উৎপত্তি হৈছে। সেই সময়ত জানটোৰ দুয়োপাৰে বহুতো ক'লা তৰাগছ আছিল, সেয়েহে জানটোৰ নাম তৰাজান হ'ল। 'জান' হৈছে সৰু নৈৰ অসমীয়া শব্দ। তৰাজান অঞ্চলত ১৯১৮ চনৰ এটা আগষ্ট মাহৰ দিনত 'অসমীয়া ল'ৰাৰ চৰিত্ৰ গঠন সভা' নামৰ এটা ক্লাব প্ৰতিষ্ঠা কৰা হয়। এইটোৱেই আছিল তৰাজান অঞ্চলৰ প্ৰথম ৰাজহুৱা সংগঠন, যিটো এতিয়া বিলুপ্ত। এই ক্লাবে অঞ্চলটোৰ যুৱকসকলক ক্ৰীড়াক্ষেত্ৰত আগবঢ়াত সহায় কৰিছিল। এই ক্লাবৰ পতাকাৰ তলত ১৯২৭ চনত এটা নতুন সংগঠন — তৰাজান সন্মিলন — প্ৰতিষ্ঠা কৰা হয়। তৰাজান সন্মিলন গঠনৰ আগতেও তৰাজানত দুৰ্গাপূজা পালন কৰা হৈছিল, কিন্তু অনিয়মীয়াকৈ। তৰাজান সন্মিলন গঠনৰ পিছত ই সন্মিলনৰ তত্ত্বাৱধানত নিয়মীয়া হৈ পৰে। লগতে, তৰাজান সন্মিলনে অঞ্চলটোৰ সাংস্কৃতিক উন্নয়নৰ বাবেও কাম আৰম্ভ কৰে। প্ৰতিষ্ঠাৰ প্ৰথম বছৰৰ পূজাৰ দিনবোৰত দুখন নাটক মঞ্চস্থ কৰা হৈছিল — জাহ্নৱী আৰু ৰাণা প্ৰতাপ সিংহ।",
+      "At that time, the Tarajan Sanmilan had no land of its own. Later, the late Bipin Chandra Bardoloi, EAC of Jorhat, allocated the necessary government land for the Tarajan Sanmilan. He was employed in Jorhat from 1912 to 1929, and during that time, through the efforts of various others including him, the Tarajan Sanmilan gained a limited permanent form with wooden and iron poles. Many of the people who led the Tarajan Sanmilan in the early years were pioneers in various fields of Jorhat and Assam. Among these were Advocate late Purnananda Sharma Pathak and Advocate late Jadunath Barua — these two held important portfolios like President and Vice-President of the Jorhat Municipal Board during the then British rule. This list also includes late Radhanath Barthakur, who was the founder of the prestigious Happy Lodge hotels in Shillong and Guwahati. Similarly, late Umacharan Baruah was a prominent tea planter.":
+        "সেই সময়ত তৰাজান সন্মিলনৰ নিজা মাটি নাছিল। পিছলৈ, যোৰহাটৰ ই.এ.চি. প্ৰয়াত বিপিন চন্দ্ৰ বৰদলৈয়ে তৰাজান সন্মিলনৰ বাবে প্ৰয়োজনীয় চৰকাৰী মাটি আবণ্টন কৰে। তেওঁ ১৯১২ চনৰ পৰা ১৯২৯ চনলৈ যোৰহাটত কৰ্মৰত আছিল, আৰু সেই সময়ত তেওঁকে ধৰি বিভিন্ন লোকৰ প্ৰচেষ্টাত তৰাজান সন্মিলনে কাঠ আৰু লোহাৰ খুঁটাৰে এক সীমিত স্থায়ী ৰূপ লাভ কৰে। আৰম্ভণিৰ বছৰবোৰত তৰাজান সন্মিলনক নেতৃত্ব দিয়া বহুলোক যোৰহাট আৰু অসমৰ বিভিন্ন ক্ষেত্ৰৰ অগ্ৰণী আছিল। ইয়াৰ ভিতৰত আছিল অধিবক্তা প্ৰয়াত পূৰ্ণানন্দ শৰ্মা পাঠক আৰু অধিবক্তা প্ৰয়াত যদুনাথ বৰুৱা — এই দুয়োগৰাকীয়ে তেতিয়াৰ ব্ৰিটিছ শাসনৰ সময়ত যোৰহাট পৌৰসভাৰ সভাপতি আৰু উপ-সভাপতিৰ দৰে গুৰুত্বপূৰ্ণ পদ অলংকৃত কৰিছিল। এই তালিকাত প্ৰয়াত ৰাধানাথ বৰঠাকুৰৰ নামো আছে, যি শ্বিলং আৰু গুৱাহাটীৰ প্ৰসিদ্ধ হেপী লজ হোটেলৰ প্ৰতিষ্ঠাপক আছিল। একেদৰে, প্ৰয়াত উমাচৰণ বৰুৱা এজন প্ৰখ্যাত চাহ খেতিয়ক আছিল।",
+      "Apart from theatre performances and Durga Puja celebrations, the Tarajan Sanmilan has been doing much work for the social and spiritual upliftment of the area. The late Samar Bordoloi, one of the pioneer body builders of Assam, inspired and trained a number of teenagers and youths at the Tarajan Sanmilan premises in the 1980s.":
+        "নাট্য পৰিৱেশন আৰু দুৰ্গাপূজা উদ্‌যাপনৰ উপৰিও, তৰাজান সন্মিলনে অঞ্চলটোৰ সামাজিক আৰু আধ্যাত্মিক উন্নয়নৰ বাবে বহুতো কাম কৰি আহিছে। অসমৰ অন্যতম অগ্ৰণী শৰীৰচৰ্চাবিদ প্ৰয়াত সমৰ বৰদলৈয়ে ১৯৮০ৰ দশকত তৰাজান সন্মিলনৰ চৌহদত বহুসংখ্যক কিশোৰ আৰু যুৱকক অনুপ্ৰাণিত আৰু প্ৰশিক্ষিত কৰিছিল।",
+      "\"Where community gathers, culture lives on.\"":"\"য'ত সমাজ গোট খায়, ত'ত সংস্কৃতি জীয়াই থাকে।\"",
+      "— Founding Charter, 1927 · প্ৰতিষ্ঠাপক গোচৰ":"— প্ৰতিষ্ঠাপক গোচৰ, ১৯২৭",
+      // Timeline & History
+      "100 Years · ১০০ বছৰ":"১০০ বছৰ",
+      "From humble beginnings in 1927 to a vibrant centenary, each decade has written its own chapter.":
+        "১৯২৭ চনৰ সাধাৰণ আৰম্ভণিৰ পৰা এক প্ৰাণৱন্ত শতবৰ্ষলৈ, প্ৰতিটো দশকে নিজৰ অধ্যায় লিখিছে।",
+      "Foundation":"প্ৰতিষ্ঠা",
+      "Tarajan Sanmilan is established in the Tarajan locality of Jorhat, Assam.":
+        "অসমৰ যোৰহাটৰ তৰাজান অঞ্চলত তৰাজান সন্মিলন প্ৰতিষ্ঠা হয়।",
+      "The First Stage":"প্ৰথম মঞ্চ",
+      "Bipin Bardoloi and Indreswar Saikia gather four iron posts and a few wooden posts to raise the Sanmilan's first temporary stage.":
+        "১৯২৮ চনত বিপিন বৰদলৈ আৰু ইন্দ্ৰেশ্বৰ শইকীয়াই চাৰিটা লোহাৰ খুঁটা আৰু কেইটামান কাঠৰ খুঁটা সংগ্ৰহ কৰি অস্থায়ী মঞ্চ আৰম্ভ কৰে।",
+      "The Constitution":"নিয়মাৱলী প্ৰণয়ন",
+      "The Sanmilan's formal rules are framed in 1960, and later amended in 1978 and 2001.":
+        "১৯৬০ চনত সন্মিলনৰ নিয়মাৱলী প্ৰস্তুত কৰা হয়; পিছত ১৯৭৮ আৰু ২০০১ চনত সংশোধন কৰা হয়।",
+      "Three Committees":"তিনিটা শাখা",
+      "From 1927 to 1978 the Sanmilan ran under a single committee. In 1978 it is reorganised into three wings — the Central Committee, the Puja Committee and the Cultural Committee.":
+        "১৯২৭ চনৰ পৰা ১৯৭৮ চনলৈকে সন্মিলন এখন সমিতিৰ অধীনত আছিল। ১৯৭৮ চনৰ পৰা ইয়াক তিনিটা শাখা— কেন্দ্ৰীয় সমিতি, পূজা সমিতি আৰু সাংস্কৃতিক সমিতিলৈ পুনৰ্গঠন কৰা হয়।",
+      "Emblem & Flag":"প্ৰতীক আৰু পতাকা",
+      "The Sanmilan adopts an official emblem and a flag bearing that emblem.":
+        "১৯৯৬ চনত সন্মিলনৰ এটা প্ৰতীক পট আৰু প্ৰতীক পট সম্বলিত পতাকা গ্ৰহণ কৰা হয়।",
+      "Platinum Jubilee":"মহাৰজত জয়ন্তী",
+      "The Sanmilan celebrates its Platinum Jubilee. Its commemorative souvenir চয়নিকা (Choynika), edited by the late Mahesh Chandra Bhattacharya, becomes the Sanmilan's first published document.":
+        "২০০১ চনত মহাৰজত জয়ন্তী উদ্‌যাপন কৰা হয়। সেই উপলক্ষে প্ৰকাশিত স্মৃতিগ্ৰন্থ 'চয়নিকা' (প্ৰয়াত মহেশ চন্দ্ৰ ভট্টাচাৰ্য্য সম্পাদিত) হৈছে তৰাজান সন্মিলনৰ প্ৰথম প্ৰকাশিত দস্তাবেজ।",
+      "The 'Tarajan' Journal":"'তৰাজান' মুখপত্ৰ",
+      "The Sanmilan's annual journal 'Tarajan' is published for the first time.":
+        "২০০৭ চনত তৰাজান সন্মিলনৰ বাৰ্ষিক মুখপত্ৰ 'তৰাজান'ৰ প্ৰথম প্ৰকাশ ঘটে।",
+      "Women's Forum":"তৰাজান মহিলা চ'ৰা",
+      "The Tarajan Mahila Chora (Women's Forum) is founded on 3 June 2012.":
+        "২০১২ চনৰ ৩ জুনৰ দিনা তৰাজান মহিলা চ'ৰাৰ আৰম্ভণি হয়।",
+      "A New Home":"নতুন গৃহ",
+      "Construction of the Sanmilan's new premises begins under a new project.":
+        "২০১৮–১৯ চনত নতুন প্ৰকল্পৰ মাধ্যমেৰে তৰাজান সন্মিলনৰ নতুন গৃহ নিৰ্মাণ আৰম্ভ হয়।",
+      "Centenary — 100 Years":"শতবৰ্ষ — ১০০ বছৰ",
+      "A year-long celebration marks a century of service, culture and community. The journey continues into the next hundred years.":
+        "এবছৰজোৰা উদ্‌যাপনে এক শতাব্দীৰ সেৱা, সংস্কৃতি আৰু সমাজক চিহ্নিত কৰে। যাত্ৰা অহা এশ বছৰলৈ অব্যাহত থাকে।",
+      // History — traditions of the formative years
+      "Early Years · আৰম্ভণিৰ পৰম্পৰা":"আৰম্ভণিৰ পৰম্পৰা",
+      "Worship & the Idols":"পূজা আৰু প্ৰতিমা",
+      "In the earliest years, worship was offered before a sacred ghat rather than an idol. Later, idols crafted by the father of the late Makhan Sharma of Tarajan Brahmin village were used; from 1960, idols made by professional artists were introduced.":
+        "আৰম্ভণিৰ সময়চোৱাত প্ৰতিমাৰ পৰিৱৰ্তে ঘটৰ সন্মুখত পূজা কৰা হৈছিল। তাৰ কিছুদিন পাছত তৰাজান ব্ৰাহ্মণ গাঁৱৰ প্ৰয়াত মাখন শৰ্মাৰ দেউতাকে নিৰ্মাণ কৰা প্ৰতিমা, আৰু ১৯৬০ চনৰ পৰাহে পেছাদাৰী শিল্পীৰ দ্বাৰা নিৰ্মিত প্ৰতিমাৰ ব্যৱহাৰ আৰম্ভ হ'ল।",
+      "Painted Backdrops & 'Siraj'":"দৃশ্যপট আৰু 'চিৰাজ'",
+      "Early plays used no modern stagecraft; painted backdrops of palaces, forests and more were hung to evoke each setting. They were painted by Lakshiram Baruah, who studied fine art in Calcutta and served as drawing master at Jorhat Government School. The first play staged with such scenery was 'Siraj', conceived by Nab Baruah.":
+        "আৰম্ভণিৰ সময়চোৱাত তৰাজান সন্মিলনৰ মঞ্চত অভিনীত নাটসমূহৰ বাবে বৰ্তমান প্ৰচলিত মঞ্চসজ্জা ব্যৱহাৰ হোৱা নাছিল। সেই সময়ত নাট্যাভিনয়ৰ বাবে প্ৰাসংগিক পৰিৱেশৰ ধাৰণা দিবলৈ দৃশ্যপট (ৰাজপ্ৰাসাদ, হাবি আদি) অঙ্কন কৰি মঞ্চত আঁৰি দিয়া হৈছিল। সেই দৃশ্যপটসমূহ অঙ্কন কৰিছিল কলিকতাত চিত্ৰকলা অধ্যয়ন কৰি আহি যোৰহাট গৱঃ স্কুলত ড্ৰয়িং মাষ্টৰ পদত কৰ্মৰত লক্ষ্মীৰাম বৰুৱাই। মঞ্চসজ্জাৰ মাধ্যমেৰে অভিনীত প্ৰথমখন নাট 'চিৰাজ', যাৰ মূল পৰিকল্পনাকাৰী আছিল নৱ বৰুৱা।",
+      "The First Actress — 'Fulor Mel'":"প্ৰথম অভিনেত্ৰী — 'ফুলৰ মেল'",
+      "The first woman to perform on the Sanmilan stage appeared in the dance-drama 'Fulor Mel', written, composed and directed by Deven Chakravarty. Until then, men had played the women's roles.":
+        "তৰাজান সন্মিলনৰ মঞ্চত প্ৰথম মহিলা অভিনেত্ৰীৰ প্ৰৱেশ ঘটে দেৱেন চক্ৰৱৰ্তী লিখিত, সুৰাৰোপিত তথা পৰিচালিত 'ফুলৰ মেল' শীৰ্ষক নৃত্য-নাটিকাৰ মাধ্যমেৰে। তাৰ আগতে পুৰুষেই মহিলাৰ চৰিত্ৰ ৰূপায়ণ কৰিছিল।",
+      "A Permanent Auditorium":"স্থায়ী প্ৰেক্ষাগৃহ",
+      "During Purnananda Sharma Pathak's tenure as secretary, the auditorium was built in permanent form with brick and lime.":
+        "পূৰ্ণানন্দ শৰ্মাপাঠক সন্মিলনৰ সম্পাদক হৈ থকা কালত ইটা, চুণ-চুৰকি দি প্ৰেক্ষাগৃহটি স্থায়ীকৈ নিৰ্মাণ কৰা হয়।",
+      "The Puja Ghar":"পূজা ঘৰ",
+      "While Radhanath Barthakur was president, he had the puja house built permanently at his own expense; its front portion was later added by the Sanmilan's puja branch through public donations.":
+        "ৰাধানাথ বৰঠাকুৰ সভাপতি হৈ থকা কালত পূজা ঘৰটো স্থায়ীকৈ নিজা খৰচত নিৰ্মাণ কৰাই দিয়ে। সন্মুখৰ অংশটি সন্মিলনৰ পূজা শাখাই দান-বৰঙণি সংগ্ৰহ কৰি সজাই লয়।",
+      "Founding-Era Leadership · প্ৰতিষ্ঠাকালীন নেতৃত্ব":"প্ৰতিষ্ঠাকালীন নেতৃত্ব",
+      // Gallery
+      "Photo Archive · ফটো আৰ্কাইভ":"ফটো আৰ্কাইভ",
+      "Founding Members · 1927":"প্ৰতিষ্ঠাপক সদস্য · ১৯২৭",
+      "Bihu Celebration · 1935":"বিহু উৎসৱ · ১৯৩৫",
+      "First Bihu Celebration · 1935":"প্ৰথম বিহু উৎসৱ · ১৯৩৫",
+      "Independence Day · 1947":"স্বাধীনতা দিৱস · ১৯৪৭",
+      "Independence Day Gathering · 1947":"স্বাধীনতা দিৱসৰ সমাবেশ · ১৯৪৭",
+      "Clubhouse Inauguration · 1960":"ক্লাবঘৰ উদ্বোধন · ১৯৬০",
+      "Golden Jubilee · 1977":"সোণালী জয়ন্তী · ১৯৭৭",
+      "Golden Jubilee Celebrations · 1977":"সোণালী জয়ন্তী উদ্‌যাপন · ১৯৭৭",
+      "Cultural Performance":"সাংস্কৃতিক পৰিৱেশন",
+      "Annual Meeting · 2000s":"বাৰ্ষিক সভা · ২০০০ দশক",
+      "Annual General Meeting":"বাৰ্ষিক সাধাৰণ সভা",
+      "Community Welfare":"সামাজিক কল্যাণ",
+      "Community Welfare Programs":"সামাজিক কল্যাণ কাৰ্যসূচী",
+      // Leadership
+      "Flipping Back Time · সময়লৈ উভতি চোৱা":"সময়লৈ উভতি চোৱা",
+      "Souvenir Magazine · স্মৃতিগ্ৰন্থ":"স্মৃতিগ্ৰন্থ",
+      "Platinum Jubilee · মহাৰজত জয়ন্তী":"মহাৰজত জয়ন্তী",
+      "Annual Journal · বাৰ্ষিক মুখপত্ৰ":"বাৰ্ষিক মুখপত্ৰ",
+      "Inaugural Issue · প্ৰস্তাৱনা সংখ্যা":"প্ৰস্তাৱনা সংখ্যা",
+      "2nd Issue · দ্বিতীয় সংখ্যা":"দ্বিতীয় সংখ্যা",
+      "3rd Issue · তৃতীয় সংখ্যা":"তৃতীয় সংখ্যা",
+      "4th Issue · চতুৰ্থ সংখ্যা":"চতুৰ্থ সংখ্যা",
+      "5th Issue · পঞ্চম সংখ্যা":"পঞ্চম সংখ্যা",
+      "6th Issue · ষষ্ঠ সংখ্যা":"ষষ্ঠ সংখ্যা",
+      "7th Issue · সপ্তম সংখ্যা":"সপ্তম সংখ্যা",
+      "8th Issue · অষ্টম সংখ্যা":"অষ্টম সংখ্যা",
+      "9th Issue · নৱম সংখ্যা":"নৱম সংখ্যা",
+      "10th Issue · দশম সংখ্যা":"দশম সংখ্যা",
+      "Pradip Kumar Borah":"প্ৰদীপ কুমাৰ বৰা", "Rekha Devi Gogoi":"ৰেখা দেৱী গগৈ",
+      "Arun Jyoti Phukan":"অৰুণ জ্যোতি ফুকন", "Mridul Hazarika":"মৃদুল হাজৰিকা",
+      "Dipanjali Saikia":"দীপাঞ্জলি শইকীয়া", "Bhupen Nath":"ভূপেন নাথ",
+      "President":"সভাপতি", "Vice President":"উপ-সভাপতি", "General Secretary":"সাধাৰণ সম্পাদক",
+      "Treasurer":"কোষাধ্যক্ষ", "Cultural Secretary":"সাংস্কৃতিক সম্পাদক", "Welfare Secretary":"কল্যাণ সম্পাদক",
+      "Serving since 2020":"২০২০ ৰ পৰা সেৱাৰত", "Serving since 2021":"২০২১ ৰ পৰা সেৱাৰত",
+      "Serving since 2019":"২০১৯ ৰ পৰা সেৱাৰত", "Serving since 2022":"২০২২ ৰ পৰা সেৱাৰত",
+      "Serving since 2023":"২০২৩ ৰ পৰা সেৱাৰত",
+      // Events
+      "Upcoming · আগন্তুক অনুষ্ঠান":"আগন্তুক অনুষ্ঠান",
+      "Cultural · Annual":"সাংস্কৃতিক · বাৰ্ষিক", "National · Patriotic":"ৰাষ্ট্ৰীয় · দেশপ্ৰেম",
+      "Centenary · Special":"শতবৰ্ষ · বিশেষ", "Centenary · Grand Finale":"শতবৰ্ষ · মহা সামৰণি",
+      "Rongali Bihu Celebration 2026":"ৰঙালী বিহু উৎসৱ ২০২৬",
+      "Independence Day — Community Gathering":"স্বাধীনতা দিৱস — সামাজিক সমাবেশ",
+      "Centenary Year Launch Ceremony":"শতবৰ্ষ উদ্বোধনী অনুষ্ঠান",
+      "100 Years — Grand Centenary Gala":"১০০ বছৰ — মহা শতবৰ্ষ গালা",
+      "Sanmilan Hall, Assam · 10:00 AM onwards":"সন্মিলন হল, অসম · পুৱা ১০:০০ বজাৰ পৰা",
+      "Sanmilan Hall, Assam · 8:00 AM Flag Hoisting":"সন্মিলন হল, অসম · পুৱা ৮:০০ বজাত পতাকা উত্তোলন",
+      "Sanmilan Hall, Assam · Grand Opening — All Members Welcome":"সন্মিলন হল, অসম · মহা উদ্বোধন — সকলো সদস্যলৈ আদৰণি",
+      "Sanmilan Hall, Assam · Formal Dinner, Awards & Cultural Show":"সন্মিলন হল, অসম · আনুষ্ঠানিক নৈশভোজ, বঁটা আৰু সাংস্কৃতিক অনুষ্ঠান",
+      "Apr":"এপ্ৰিল", "Aug":"আগষ্ট", "Jan":"জানুৱাৰী", "Dec":"ডিচেম্বৰ",
+      "Register":"পঞ্জীয়ন",
+      // Donate
+      "Support Us · সহায় কৰক":"সহায় কৰক",
+      "Your contribution sustains our cultural programs, preserves our archives, and funds the centenary celebrations that will honour a century of community life in Assam.":
+        "আপোনাৰ অৱদানে আমাৰ সাংস্কৃতিক কাৰ্যসূচী চলাই ৰাখে, আমাৰ আৰ্কাইভ সংৰক্ষণ কৰে আৰু অসমৰ এক শতাব্দীৰ সামাজিক জীৱনক সন্মান জনোৱা শতবৰ্ষ উদ্‌যাপনৰ বাবে পুঁজি যোগায়।",
+      "Supporter":"সমৰ্থক", "Charter Member":"চাৰ্টাৰ সদস্য", "Pioneer Member":"অগ্ৰণী সদস্য", "Patron":"পৃষ্ঠপোষক", "Benefactor":"হিতৈষী",
+      "Donate to the Centenary Fund":"শতবৰ্ষ পুঁজিলৈ দান কৰক",
+      "All contributions are recognised in our centenary publication.":"সকলো অৱদান আমাৰ শতবৰ্ষ প্ৰকাশনত স্বীকৃতি দিয়া হয়।",
+      // Contact
+      "Get in Touch · যোগাযোগ":"Get in Touch · যোগাযোগ",
+      "Address":"ঠিকনা", "Phone":"ফোন", "Email":"ইমেইল", "Office Hours":"কাৰ্যালয় সময়",
+      "First Name":"নাম", "Last Name":"উপনাম", "Email Address":"ইমেইল ঠিকনা",
+      "Subject":"বিষয়", "Message":"বাৰ্তা",
+      "Select a subject":"বিষয় বাছনি কৰক", "Membership Enquiry":"সদস্যতা সম্পৰ্কীয়",
+      "Centenary Events":"শতবৰ্ষৰ অনুষ্ঠান", "Donation & Sponsorship":"দান আৰু পৃষ্ঠপোষকতা",
+      "Cultural Programme":"সাংস্কৃতিক কাৰ্যসূচী", "General Enquiry":"সাধাৰণ সোধ-বিচাৰ",
+      "Send Message":"বাৰ্তা পঠিয়াওক",
+      // Footer
+      "A century of community, culture, and heritage. Proudly rooted in Assam since 1927.":
+        "এক শতাব্দীৰ সমাজ, সংস্কৃতি আৰু ঐতিহ্য। ১৯২৭ চনৰ পৰা গৌৰৱেৰে অসমত প্ৰোথিত।",
+      "Navigate":"দিশনিৰ্ণয়", "Engage":"অংশগ্ৰহণ", "Centenary":"শতবৰ্ষ",
+      "About Us":"আমাৰ বিষয়ে", "Our History":"আমাৰ ইতিহাস", "Membership":"সদস্যতা",
+      "Contact Us":"যোগাযোগ কৰক", "Centenary Fund":"শতবৰ্ষ পুঁজি",
+      "100 Years":"১০০ বছৰ", "Photo Archive":"ফটো আৰ্কাইভ",
+      "© 2025 Tarajan Sanmilan. All rights reserved.":"© ২০২৫ তৰাজান সন্মিলন। সৰ্বস্বত্ব সংৰক্ষিত।",
+      "Follow us on Facebook":"ফেচবুকত আমাক অনুসৰণ কৰক",
+      "Or Contribute Directly · প্ৰত্যক্ষভাৱে":"প্ৰত্যক্ষভাৱে দান কৰক",
+      "Scan BHIM QR or use UPI ID":"BHIM QR স্কেন কৰক বা UPI ID ব্যৱহাৰ কৰক",
+      "Bank Details":"বেংকৰ সবিশেষ",
+      "Account Name":"একাউণ্টৰ নাম", "Account Number":"একাউণ্ট নম্বৰ",
+      "Bank Name":"বেংকৰ নাম", "IFSC Code":"IFSC ক'ড", "Branch":"শাখা",
+      // Events — centenary programme
+      "Centenary Programme · শতবৰ্ষৰ কাৰ্যসূচী":"শতবৰ্ষৰ কাৰ্যসূচী",
+      "Year-Long · বৰ্ষজোৰা কাৰ্যসূচী":"বৰ্ষজোৰা কাৰ্যসূচী",
+      "Through the Centenary Year":"বৰ্ষজোৰা অন্যান্য কাৰ্যসূচী",
+      "Inauguration":"উদ্বোধনী অনুষ্ঠান", "Day Two":"দ্বিতীয় দিন",
+      "6:00 AM":"পূৰ্বাহ্ন ৬:০০", "7:30 AM":"পূৰ্বাহ্ন ৭:৩০", "10:30 AM":"পূৰ্বাহ্ন ১০:৩০",
+      "11:00 AM":"পূৰ্বাহ্ন ১১:০০", "11:30 AM":"পূৰ্বাহ্ন ১১:৩০", "12:00 Noon":"মধ্যাহ্ন ১২:০০",
+      "6:00 PM":"সন্ধিয়া ৬:০০", "6:30 PM":"সন্ধ্যা ৬:৩০",
+      "Usha Kirtan & cleansing of the premises":"ঊষা কীৰ্তন আৰু পৰিৱেশ নিকাকৰণ",
+      "Puja archana — seeking the blessings of Lord Ganapati":"পুজা অৰ্চনাৰে গণপতি দেৱতাৰ আশীষ গ্ৰহণ",
+      "Hoisting of the Sanmilan's 100 flags with mangalacharan":"মংগলাচৰণেৰে সন্মিলনৰ ১০০ খন পতাকাৰ উত্তোলন",
+      "Smriti-tarpan — homage to the departed":"স্মৃতিতৰ্পণ",
+      "The Sanmilan anthem performed by 100 members":"সন্মিলনৰ ১০০ গৰাকী সদস্যৰে সন্মিলনৰ শীৰ্ষ গীত পৰিৱেশন",
+      "Distribution of saplings":"গছপুলি বিতৰণ",
+      "Lighting of 100 lamps":"১০০ গছি বন্তি প্ৰজ্বলন",
+      "Children's play performance":"শিশুনাট প্ৰদৰ্শন",
+      "History-based theatrical moments":"ইতিহাস আধাৰিত নাট্য মুহূৰ্ত",
+      "Themed competitions":"ভিন্ন বিষয়ধৰ্মী প্ৰতিযোগিতা",
+      "Talks with expatriate Tarajanians & reminiscence":"প্ৰবাসী তৰাজনীয়াৰ অন্তৰংগ আলাপ আৰু অতীত ৰোমন্থন",
+      "Seminars":"আলোচনা চক্ৰ", "Medical camp":"চিকিৎসা শিৱিৰ",
+      "Drama festival":"নাট সমাৰোহ", "Souvenir publication":"স্মৃতিগ্ৰন্থ প্ৰণয়ন",
+      "Annual religious & cultural programmes":"নিয়মীয়া বাৰ্ষিক ধৰ্মীয় আৰু সাংস্কৃতিক অনুষ্ঠান"
+    };
+
+    // Rich elements with inline markup (<br>, <em>) — keyed by element id
+    const T_HTML = {
+      "hero-title":      { en: "Tarajan<br>Sanmilan", as: "তৰাজান<br>সন্মিলন" },
+      "about-title":     { en: "A Century of<br><em>Community & Pride</em>", as: "এক শতাব্দীৰ<br><em>সমাজ আৰু গৌৰৱ</em>" },
+      "timeline-title":  { en: "A Century of <em>Milestones</em>", as: "এক শতাব্দীৰ <em>মাইলৰ খুঁটি</em>" },
+      "trad-title":      { en: "Traditions of the <em>Formative Years</em>", as: "আৰম্ভণিৰ <em>পৰম্পৰাসমূহ</em>" },
+      "honor-title":     { en: "Those Who <em>Led</em> · 1927–1978", as: "যিসকলে <em>নেতৃত্ব</em> দিছিল · ১৯২৭–১৯৭৮" },
+      "gallery-title":   { en: "Moments That <em>Shaped History</em>", as: "ইতিহাস <em>গঢ়া মুহূৰ্তবোৰ</em>" },
+      "leadership-title":{ en: "Down Memory <em>Lane</em>", as: "সোঁৱৰণিৰ <em>বাটেৰে</em>" },
+      "events-title":    { en: "The Centenary <em>Programme</em>", as: "শতবৰ্ষৰ <em>কাৰ্যসূচী</em>" },
+      "donate-title":    { en: "Help Us Honour<br><em>100 Years</em>", as: "১০০ বছৰক সন্মান<br><em>জনাবলৈ সহায় কৰক</em>" },
+      "contact-title":   { en: "Visit Us or<br><em>Get in Touch</em>", as: "Visit Us or<br><em>Get in Touch</em>" },
+      "contact-addr":    { en: "Tarajan Sanmilan<br>Tarajan, Jorhat – 785001, Assam, India", as: "তৰাজান সন্মিলন<br>তৰাজান, যোৰহাট – ৭৮৫০০১, অসম, ভাৰত" },
+      "contact-hours":   { en: "Monday – Saturday<br>10:00 AM – 5:00 PM", as: "সোমবাৰ – শনিবাৰ<br>পুৱা ১০:০০ – আবেলি ৫:০০" }
+    };
+
+    // Leaf elements to translate by text content
+    const TEXT_SELECTORS = [
+      '.nav-links a', '.nav-cta', '.mobile-menu > a',
+      '.stat-label', '.tl-event', '.tl-desc',
+      '.member-name', '.member-role', '.member-since',
+      '.event-tag', '.event-name', '.event-details', '.event-cta', '.event-date-month',
+      '.prog-tag', '.prog-time', '.prog-text', '.prog-chip', '.prog-yearlong-title',
+      '.tier-label', '.donate-btn', '.donate-note', '.donate-desc',
+      '.footer-col h4', '.footer-col a', '.footer-brand p', '.footer-bottom p:first-child',
+      '.contact-detail h4', '.form-group label', '.form-group select option', '.form-submit',
+      '.about-photo-label', '.about-text > p', '.about-quote p', '.about-quote cite',
+      '.timeline-header > p', '.hero-desc', '.hero-eyebrow', '.section-eyebrow',
+      '.gallery-ph-label', '.gallery-overlay-text', '.hero-year-badge span', '.hero-scroll span',
+      '.btn-primary', '.btn-outline', '.social-link span',
+      '.pay-heading', '.pay-qr-caption', '.pay-bank-title', '.bank-label',
+      '.vault-tag', '.vault-occasion', '.tradition-card h4', '.tradition-card p'
+    ].join(',');
+
+    const normalize = s => s.replace(/ /g, ' ').replace(/\s+/g, ' ').trim();
+
+    // Cache original English content once
+    const textEls = [...new Set([...document.querySelectorAll(TEXT_SELECTORS)])];
+    textEls.forEach(el => {
+      el.dataset.en = el.innerHTML;
+      const as = T[normalize(el.textContent)];
+      if (as) el.dataset.as = as;
+    });
+
+    function setLanguage(lang) {
+      const isAs = lang === 'as';
+      // Leaf text elements
+      textEls.forEach(el => {
+        if (isAs && el.dataset.as) el.textContent = el.dataset.as;
+        else el.innerHTML = el.dataset.en;
+      });
+      // Rich elements
+      Object.keys(T_HTML).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = isAs ? T_HTML[id].as : T_HTML[id].en;
+      });
+      // Body class + document lang for fonts/SEO
+      document.body.classList.toggle('lang-as', isAs);
+      document.documentElement.setAttribute('lang', isAs ? 'as' : 'en');
+      // Sync both toggle groups
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        const on = btn.dataset.lang === lang;
+        btn.classList.toggle('active', on);
+        btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      try { localStorage.setItem('ts-lang', lang); } catch (e) {}
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    });
+
+    // Restore saved preference
+    let savedLang = 'en';
+    try { savedLang = localStorage.getItem('ts-lang') || 'en'; } catch (e) {}
+    if (savedLang === 'as') setLanguage('as');
+  </script>
+</body>
+</html>
